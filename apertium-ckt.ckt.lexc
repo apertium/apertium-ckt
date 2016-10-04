@@ -40,6 +40,7 @@ Multichar_Symbols
 
 %<pers%>
 
+%<ord%>
 
 %<inf%>
 
@@ -156,6 +157,7 @@ LEXICON PRON-GYM
 LEXICON NUM
 
 %<num%>: # ;
+%<num%>%<ord%>:%>эв # ;
 
 LEXICON ADV
 
@@ -212,11 +214,15 @@ LEXICON Adverbs
 
 энмэн:энмэн ADV ; ! ""
 нэмэ:нэмэ ADV ; ! "опять"
+игыр:игыр ADV ; ! "сегодня"
+
 
 LEXICON Verbs 
 
 рагты:рагты V-IV ; ! ""
 тыԓя:тыԓя V-IV ; ! ""
+чейвы:чейвы V-IV ; ! "ходить"
+!льук:льук V-TV ; ! "видеть"
 
 LEXICON Interjections 
 

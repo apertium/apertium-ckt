@@ -15,4 +15,5 @@
 /ckt.prob -text svneol=unset#unset
 /configure.ac -text
 /modes.xml -text
+texts/examples.vislcg.txt -text
 texts/kymytval_sverennyj.vislcg.txt -text
