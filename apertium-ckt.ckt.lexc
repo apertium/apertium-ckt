@@ -1,11 +1,15 @@
-! Morphological Transducer for ckt
-
 Multichar_Symbols
 
-! Part of speech categories
-%<n%>  ! Noun
-%<pl%> ! Plural
-%<sg%> ! Singular
+%<n%>          ! Noun
+%<adv%> 
+%<num%> 
+
+%<pl%>         ! Plural
+%<sg%>         ! Singular
+
+%<abl%> 
+
+%> 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -13,27 +17,38 @@ Multichar_Symbols
 
 LEXICON Root
 
-NounRoot ;
+Adverbs ;
+
+LEXICON CASE
+
+%<abl%>:%>йпы # ;
+
+LEXICON N-QORA 
+
+%<n%>: CASE ;
+%<n%>%<pl%>%<abs%>:%>т # ;
+
+LEXICON NUM
+
+%<num%>: # ;
+
+LEXICON ADV
+
+%<adv%>: # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON NounRoot
+LEXICON Numerals 
 
-house RegNounInfl ; ! A noun
+ӈирэӄ:ӈирэӄ NUM ; ! "два"
 
-LEXICON RegNounInfl
+LEXICON Adverbs
 
-%<n%>%<sg%>:   # ;
-%<n%>%<pl%>:s   # ;
+энмэн:энмэн ADV ; ! ""
 
-! Resources:
-! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
-! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
-! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
-! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
-! http://hfst.sourceforge.net/
-! http://www.cis.upenn.edu/~cis639/docs/lexc.html
-! http://wiki.apertium.org/wiki/Hfst
+LEXICON Nouns 
 
+ӄора:ӄора N-QORA ; ! "олень"
+о'равэтԓьа:о'равэтԓьа N-QORA ; ! "человек"
