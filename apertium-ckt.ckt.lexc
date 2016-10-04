@@ -3,10 +3,14 @@ Multichar_Symbols
 %<n%>          ! Noun
 %<adv%> 
 %<num%> 
+%<ij%>
+%<cnjcoo%>
 %<v%> 
 
 %<iv%> 
 %<tv%> 
+
+%<incorp%>
 
 %<s_sg1%>
 %<s_sg2%>
@@ -38,9 +42,11 @@ Multichar_Symbols
 
 LEXICON Root
 
+Conjunctions ;
 Numerals ;
 Nouns ;
 Adverbs ;
+Interjections ;
 Punctuation ;
 
 V-PREFIX ;
@@ -65,7 +71,7 @@ LEXICON V-INCORP
 LEXICON V-IV
 
 %<v%>%<iv%>: V-AFFIX  ; 
-%<v%>%<iv%>: V-INCORP ; 
+%<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
 LEXICON N-QORA 
 
@@ -85,9 +91,23 @@ LEXICON V-PREFIX
 %[%+ны%]:ны%> Verbs ;
               Verbs ; 
 
+
+LEXICON CC 
+
+%<cnjcoo%>: # ;
+
+LEXICON INTERJ 
+
+%<ij%>: # ;
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Conjunctions 
+
+ынкъам:ынкъам CC ; 
+чама:чама CC ; 
 
 LEXICON Numerals 
 
@@ -96,6 +116,7 @@ LEXICON Numerals
 LEXICON Adverbs
 
 энмэн:энмэн ADV ; ! ""
+нэмэ:нэмэ ADV ; ! "опять"
 
 LEXICON Nouns 
 
@@ -106,6 +127,12 @@ LEXICON Verbs
 
 рагты:рагты V-IV ; ! ""
 тыԓя:тыԓя V-IV ; ! ""
+
+
+LEXICON Interjections 
+
+вынэ:вынэ INTERJ ; ! "ну-ка"
+аны:аны INTERJ ;  ! "ну"
 
 LEXICON Punctuation 
 
