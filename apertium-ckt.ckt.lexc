@@ -26,6 +26,13 @@ Multichar_Symbols
 %<s_pl2%>
 %<s_pl3%>
 
+%<px1sg%>
+%<px2sg%>
+%<px3sg%>
+%<px1pl%>
+%<px2pl%>
+%<px3pl%>
+
 %<pers%>
 
 
@@ -36,6 +43,7 @@ Multichar_Symbols
 
 %<abl%> 
 %<abs%> 
+%<ori%> 
 %<erg%> 
 %<all%> 
 %<equ%> 
@@ -45,6 +53,7 @@ Multichar_Symbols
 %<sent%>
 
 %{ы%}
+%{к%}
 
 %[%+ны%]
 %[%+ӄэна%]
@@ -69,9 +78,27 @@ Punctuation ;
 
 V-PREFIX ;
 
-LEXICON CASE
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON K 
+
+# ;
+
+LEXICON POSS
+
+%<px2sg%>:%>йгыт K ;
+
+K ;
+
+LEXICON CASE-ABL
 
 %<abl%>:%>йпы # ;
+
+LEXICON CASE-LOC 
+
+%<loc%>: # ;
+%<dat%>:%>ты # ;
+%<ori%>:%>ъет # ;
 
 LEXICON PERS
 
@@ -91,15 +118,25 @@ LEXICON V-IV
 %<v%>%<iv%>: V-AFFIX  ; 
 %<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
-LEXICON N-QORA 
+LEXICON N-OORAVETLAN
 
-%<n%>: CASE ;
+%<n%>%<sp%>: CASE-ABL ;
+%<n%>%<sp%>: CASE-LOC ;
+%<n%>%<sg%>%<abs%>:%> POSS ;
+%<n%>%<sg%>%<abs%>:%>н # ;
 %<n%>%<pl%>%<abs%>:%>т # ;
 
 LEXICON N-TSJENGYL 
 
-%<n%>: CASE ; 
+%<n%>%<sp%>: CASE-ABL ; 
 %<n%>%<pl%>%<abs%>:%>ет # ;
+
+LEXICON N-JARANGY
+
+%<n%>%<sg%>%<abs%>:%>ӈы POSS ;
+%<n%>%<pl%>%<abs%>:%>т # ;
+%<n%>%<sp%>: CASE-ABL ; 
+%<n%>%<sp%>:%{к%} CASE-LOC ; 
 
 LEXICON PRON-GYM
 
@@ -152,8 +189,9 @@ LEXICON Numerals
 
 LEXICON Nouns 
 
-ӄора:ӄора N-QORA ; ! "олень"
-о'равэтԓьа:о'равэтԓьа N-QORA ; ! "человек"
+ӄораӈы:ӄора N-JARANGY ; ! "олень"
+яраӈы:яра N-JARANGY ; ! "дом"
+о'равэтԓьан:о'равэтԓьа N-OORAVETLAN ; ! "человек"
 чеӈыл:чеӈ%{ы%}л N-TSJENGYL ; ! "ящик"
 
 LEXICON Adverbs
