@@ -3,11 +3,18 @@ Multichar_Symbols
 %<n%>          ! Noun
 %<adv%> 
 %<num%> 
+%<v%> 
+
+%<iv%> 
+%<tv%> 
 
 %<pl%>         ! Plural
 %<sg%>         ! Singular
 
 %<abl%> 
+%<abs%> 
+
+%<sent%>
 
 %> 
 
@@ -17,11 +24,19 @@ Multichar_Symbols
 
 LEXICON Root
 
+Numerals ;
+Nouns ;
 Adverbs ;
+Verbs ;
+Punctuation ;
 
 LEXICON CASE
 
 %<abl%>:%>йпы # ;
+
+LEXICON V-IV
+
+%<v%>%<iv%>: #  ; 
 
 LEXICON N-QORA 
 
@@ -35,6 +50,7 @@ LEXICON NUM
 LEXICON ADV
 
 %<adv%>: # ;
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
@@ -52,3 +68,13 @@ LEXICON Nouns
 
 ӄора:ӄора N-QORA ; ! "олень"
 о'равэтԓьа:о'равэтԓьа N-QORA ; ! "человек"
+
+
+LEXICON Verbs 
+
+рагты:рагты V-IV ; ! ""
+тыԓя:тыԓя V-IV ; ! ""
+
+LEXICON Punctuation 
+
+%.%<sent%>:%. # ; 
