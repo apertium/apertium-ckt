@@ -36,8 +36,15 @@ Multichar_Symbols
 
 %<abl%> 
 %<abs%> 
+%<erg%> 
+%<all%> 
+%<equ%> 
+%<loc%> 
+%<dat%> 
 
 %<sent%>
+
+%{ы%}
 
 %[%+ны%]
 %[%+ӄэна%]
@@ -89,9 +96,19 @@ LEXICON N-QORA
 %<n%>: CASE ;
 %<n%>%<pl%>%<abs%>:%>т # ;
 
+LEXICON N-TSJENGYL 
+
+%<n%>: CASE ; 
+%<n%>%<pl%>%<abs%>:%>ет # ;
+
 LEXICON PRON-GYM
 
 %<prn%>%<pers%>%<p1%>%<sg%>%<abs%>: # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<erg%>:нан # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:ык # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:ыкы # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<all%>:ыкагты # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<equ%>:ыгмил # ;
 
 LEXICON NUM
 
@@ -133,21 +150,21 @@ LEXICON Numerals
 
 ӈирэӄ:ӈирэӄ NUM ; ! "два"
 
+LEXICON Nouns 
+
+ӄора:ӄора N-QORA ; ! "олень"
+о'равэтԓьа:о'равэтԓьа N-QORA ; ! "человек"
+чеӈыл:чеӈ%{ы%}л N-TSJENGYL ; ! "ящик"
+
 LEXICON Adverbs
 
 энмэн:энмэн ADV ; ! ""
 нэмэ:нэмэ ADV ; ! "опять"
 
-LEXICON Nouns 
-
-ӄора:ӄора N-QORA ; ! "олень"
-о'равэтԓьа:о'равэтԓьа N-QORA ; ! "человек"
-
 LEXICON Verbs 
 
 рагты:рагты V-IV ; ! ""
 тыԓя:тыԓя V-IV ; ! ""
-
 
 LEXICON Interjections 
 
