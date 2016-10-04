@@ -1,0 +1,39 @@
+! We should probably have all the possible 
+! symbols on the surface (not morphotactic!) side here
+Alphabet
+
+ А Б В Г Д Е Ё Ж З И И К Ӄ Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ь Ы Ъ Э Ю Я
+ а б в г д е ё ж з и й к ӄ л м н ң о ө п р с т у ү ф х ц ч ш щ ь ы ъ э ю я
+ 
+ %0 1 2 3 4 5 6 7 8 9
+
+ %+ 
+
+ %<v%>
+
+ %[%+ны%]:0  %[%+ӄэна%]:0  
+
+ %[→%]:0 ;
+
+Sets 
+
+Verb = %<v%> ;
+
+Rules 
+
+
+"Circumfix"
+%[%+ны%]:0 /<= _ ; 
+   except
+       _ (:*) %[%+ӄэна%]:0 ; 
+
+"Circumfix"
+%[%+ӄэна%]:0 /<= _ ; 
+   except
+       %[%+ны%]:0 (:*) _ ; 
+
+"Incorp"
+%[→%]:0 /<= _ ;
+   except
+       _ [ ?* - %[→%]:0 ] %[→%]:0 [ ?* - %[→%]:0 ] .#. ; 
+
