@@ -1,14 +1,14 @@
 "<Энмэн>"
-	"энмэн" adv @advmod #1->6 <en:some_time_ago>
+	"энмэн" adv @advmod #1->5 <en:some_time_ago>
 "<ӄорайпы>"
-	"ӄора" n abl @nmod #2->6 <en:deer>
+	"ӄора" n abl @nmod #2->5 <en:deer>
 "<ӈирэӄ>"
 	"ӈирэӄ" num @nummod #3->4 <en:two>
 "<о'равэтԓьат>"
-	"о'равэтԓьа" n pl abs @nsubj #4->6 <en:person>
+	"о'равэтԓьа" n pl abs @nsubj #4->5 <en:person>
 "<нырагтытыԓяӄэнат>"
-	"рагты" v iv @x #5->6 <en:go.home>
-		"тыԓя" v iv impf s_pl3 @root #6->0 <en:to_walk>
+	"тыԓя" v iv impf s_pl3 @root #5->0 <en:to_walk>
+		"рагты" v iv incorp @x #6->5 <en:go.home>
 "<.>"
-	"." sent @punct #7->6
+	"." sent @punct #7->5
 

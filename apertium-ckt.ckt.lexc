@@ -3,6 +3,7 @@ Multichar_Symbols
 %<n%>          ! Noun
 %<adv%> 
 %<num%> 
+%<prn%>
 %<ij%>
 %<cnjcoo%>
 %<v%> 
@@ -12,12 +13,21 @@ Multichar_Symbols
 
 %<incorp%>
 
+%<impf%>
+
+%<p1%>
+%<p2%>
+%<p3%>
+
 %<s_sg1%>
 %<s_sg2%>
 %<s_sg3%>
 %<s_pl1%>
 %<s_pl2%>
 %<s_pl3%>
+
+%<pers%>
+
 
 %<inf%>
 
@@ -43,6 +53,7 @@ Multichar_Symbols
 LEXICON Root
 
 Conjunctions ;
+Pronouns ;
 Numerals ;
 Nouns ;
 Adverbs ;
@@ -78,6 +89,10 @@ LEXICON N-QORA
 %<n%>: CASE ;
 %<n%>%<pl%>%<abs%>:%>т # ;
 
+LEXICON PRON-GYM
+
+%<prn%>%<pers%>%<p1%>%<sg%>%<abs%>: # ;
+
 LEXICON NUM
 
 %<num%>: # ;
@@ -108,6 +123,11 @@ LEXICON Conjunctions
 
 ынкъам:ынкъам CC ; 
 чама:чама CC ; 
+нақам:нақам CC ; 
+
+LEXICON Pronouns 
+
+гым:гым PRON-GYM ; 
 
 LEXICON Numerals 
 
