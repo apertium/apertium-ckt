@@ -1,8 +1,13 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 Multichar_Symbols
 
-%<n%>          ! Noun
+%<n%>          
 %<adv%> 
 %<num%> 
+%<post%>
 %<prn%>
 %<ij%>
 %<cnjcoo%>
@@ -69,6 +74,7 @@ Multichar_Symbols
 LEXICON Root
 
 Conjunctions ;
+Postpositions ;
 Pronouns ;
 Numerals ;
 Nouns ;
@@ -165,6 +171,10 @@ LEXICON CC
 
 %<cnjcoo%>: # ;
 
+LEXICON POST 
+
+%<post%>: # ;
+
 LEXICON INTERJ 
 
 %<ij%>: # ;
@@ -177,7 +187,11 @@ LEXICON Conjunctions
 
 ынкъам:ынкъам CC ; 
 чама:чама CC ; 
-нақам:нақам CC ; 
+наӄам:наӄам CC ; 
+
+LEXICON Postpositions 
+
+ӄача:ӄача POST ; 
 
 LEXICON Pronouns 
 
