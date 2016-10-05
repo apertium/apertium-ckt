@@ -60,12 +60,14 @@ Multichar_Symbols
 
 %{ы%}
 %{к%}
+%{е%}
 
 %[%+ны%]
 %[%+ӄэна%]
 %[→%]
 
 %> 
+%»
 %+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -125,8 +127,13 @@ LEXICON V-IV
 %<v%>%<iv%>: V-AFFIX  ; 
 %<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
+LEXICON N-COMPOUND 
+
+%<cmp%>%+:%» Nouns ;
+
 LEXICON N-OORAVETLAN
 
+%<n%>%<sp%>: N-COMPOUND ; 
 %<n%>%<sp%>: CASE-ABL ;
 %<n%>%<sp%>: CASE-LOC ;
 %<n%>%<sg%>%<abs%>:%> POSS ;
@@ -135,11 +142,14 @@ LEXICON N-OORAVETLAN
 
 LEXICON N-TSJENGYL 
 
+%<n%>%<sp%>: N-COMPOUND ; 
 %<n%>%<sp%>: CASE-ABL ; 
-%<n%>%<pl%>%<abs%>:%>ет # ;
+%<n%>%<sg%>%<abs%>: # ;
+%<n%>%<pl%>%<abs%>:%>т # ;
 
 LEXICON N-JARANGY
 
+%<n%>%<sp%>: N-COMPOUND ; 
 %<n%>%<sg%>%<abs%>:%>ӈы POSS ;
 %<n%>%<pl%>%<abs%>:%>т # ;
 %<n%>%<sp%>: CASE-ABL ; 
@@ -208,7 +218,8 @@ LEXICON Nouns
 ӄораӈы:ӄора N-JARANGY ; ! "олень"
 яраӈы:яра N-JARANGY ; ! "дом"
 о'равэтԓьан:о'равэтԓьа N-OORAVETLAN ; ! "человек"
-чеӈыл:чеӈ%{ы%}л N-TSJENGYL ; ! "ящик"
+! stem: .ченле.|.чянля.|чеңыл.|ченле.
+чеӈыл:чеӈ%{ы%}л%{е%} N-TSJENGYL ; ! "ящик"
 
 LEXICON Adverbs
 
