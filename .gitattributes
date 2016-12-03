@@ -17,7 +17,7 @@
 dev/countstems.sh -text
 dev/spellrelax.twol -text
 /modes.xml -text
-tests/singulative.yaml -text
+tests/tests.yaml -text
 texts/examples.vislcg.txt -text
 texts/kymytval_sverennyj.vislcg.txt -text
 texts/puupankki.ckt.feats -text
