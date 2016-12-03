@@ -82,9 +82,10 @@ Multichar_Symbols
 %{E%}                     ! а or э
 %{ы%}                     ! Epenthetic schwa: ы or 0
 %{к%}
-%{е%}
+%{e%}                     ! е or г
 
-%{⁺ⱽᴴ%}                     ! Trigger for dominant harmony
+%{⁺ⱽᴴ%}                   ! Trigger for dominant harmony
+%{¬%}                     ! Trigger for stem-final vowel deletion
 %{☭%}                     ! Trigger for loan word phonology
 
 %[%+ны%]
@@ -117,70 +118,72 @@ Miscellaneous ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-!LEXICON K 
+
+!LEXICON K                                   !! Word-final clitics
 !
 !# ;
 
-!LEXICON POSS
+
+!LEXICON POSS                                !! Possessive suffixes
 !
 !%<px2sg%>:%>йгыт K ;
 !
 !K ;
 
-!LEXICON CASE-ABL
-
-!%<abl%>:%>йпы # ;
-
-!LEXICON CASE-LOC 
-!
-!%<loc%>: # ;
-!%<dat%>:%>ты # ;
-!%<ori%>:%>ъет # ;
-
-!LEXICON PERS
-!
-!%<s_pl3%>:%>т # ;
-
-!LEXICON V-AFFIX 
+!LEXICON V-AFFIX                             !! Verb affixes
 !
 !%[%+ӄэна%]%<impf%>:%>ӄэна PERS ;
 !%<inf%>:%>н # ; 
 
-!LEXICON V-INCORP
+!LEXICON V-INCORP                            !! Cycle for verb incorporation
 !
 !%[%→%]%+: Verbs ;
-!
-!LEXICON V-IV
+
+
+!LEXICON V-IV                                !! Intransitive verb stems
 !
 !%<v%>%<iv%>: V-AFFIX  ; 
 !%<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
-!LEXICON N-COMPOUND 
+!LEXICON N-COMPOUND                          !! Cycle for nominal compounding
 !
 !%<cmp%>%+:%» Nouns ;
 
-LEXICON CASES-OBL
+LEXICON CASES-OBL                            !! 
 
 %<sp%>%<erg%>:%>%{t%}%{E%} # ;
 %<sp%>%<ins%>:%>%{t%}%{E%} # ;
+%<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} # ;
 
-LEXICON N-QORA-ABS
+LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
+
+%<n%>%<sg%>%<abs%>: # ;
+%<n%>: CASES-OBL ; 
+
+LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted final vowel
+
+%<n%>%<sg%>%<abs%>:%{¬%} # ;
+N-IV-QORA-OBL ; 
+
+LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
 
 %<n%>%<sg%>%<abs%>:%>ӈы # ;
 
-LEXICON N-QORA-OBL
+LEXICON N-IV-QORA-OBL                        !! Class IV: Suffix -ӈы [irreg. stem]
 
 %<n%>: CASES-OBL ; 
+ 
+LEXICON N-IV-TITI                            !! Class IV: Suffix -ӈы
 
-LEXICON N-TITI
+N-IV-QORA-ABS ;
+N-IV-QORA-OBL ; 
 
-N-QORA-ABS ;
-N-QORA-OBL ; 
-
-LEXICON N-UUNX 
+LEXICON N-UUNX                               !! ??
 
 %<n%>: CASES-OBL ; 
 %<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н # ;
+
+
 
 LEXICON PRON-GYM
 
@@ -191,12 +194,13 @@ LEXICON PRON-GYM
 %<prn%>%<pers%>%<p1%>%<sg%>%<all%>:ыкагты # ;
 %<prn%>%<pers%>%<p1%>%<sg%>%<equ%>:ыгмил # ;
 
-LEXICON NUM
+
+LEXICON NUM                                  !! Numeral lexicon
 
 %<num%>: # ;
 %<num%>%<ord%>:%>эв # ;
 
-LEXICON ADV
+LEXICON ADV                                  !! Adverb lexicon
 
 %<adv%>: # ;
 
@@ -205,6 +209,8 @@ LEXICON ADV
 !%[%+ны%]:ны%> Verbs ;
 !              Verbs ; 
 !
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON CC 
 
@@ -238,7 +244,8 @@ LEXICON Conjunctions
 
 LEXICON Postpositions 
 
-ӄача:ӄача POST ; 
+рээн:рээн POST ; ! "вместе с"
+ӄача:ӄача POST ; ! "около"
 
 LEXICON Pronouns 
 
@@ -250,15 +257,34 @@ LEXICON Numerals
 
 LEXICON Nouns 
 
-ӄораӈы:ӄаа N-QORA-OBL  ; ! "олень"
-ӄораӈы:ӄора N-QORA-ABS ; ! "олень"
+аймак:аймак N-Ia-AJMAK ; ! "туша"
 
-титиӈы:тити N-TITI ; ! "иголка"
-!аӈар:аӈар N-TITI ; ! "звезда"
+экык:эк%{ы%}кэ N-Ic-EKYK ; ! "сын"
+ӈээкык:ӈээк%{ы%}кэ N-Ic-EKYK ; ! "дочь"
 
-экык:экык N-TITI ; ! "сын"
+яраӈы:яра N-IV-TITI ; ! "яранга, дом"
+ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
+кукэӈы:кукэ N-IV-TITI ; ! "котёл, кастрюля"
+ӄэмэӈы:ӄэмэ N-IV-TITI ; ! "деревянное блюдо для еды"
+ӄораӈы:ӄаа N-IV-QORA-OBL  ; ! "олень"
+ӄораӈы:ӄора N-IV-QORA-ABS ; ! "олень"
+рыпэӈы:рыпэ N-IV-TITI ; ! "молоток"
+титиӈы:тити N-IV-TITI ; ! "иголка"
+ыпаӈы:ыпа N-IV-TITI ; ! "бульон"
+
+аръапаңы:аръапа N-IV-TITI ; ! "бульон"
+мэйңырыпэңы:мэйңырыпэңы N-IV-TITI ; ! "молот"
+
+!аӈар:аӈар N-IV-TITI ; ! "звезда"
+
 
 уунъыт:уунъ N-UUNX ; ! "ягоды"
+
+
+!LEXICON ProperNouns 
+
+!LEXICON Adjectives 
+
 
 LEXICON Adverbs
 

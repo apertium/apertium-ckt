@@ -8,9 +8,10 @@ Alphabet
  %{N%}:ӈ %{N%}:г
 
  %{к%}:к %{к%}:г 
- %{е%}:е %{е%}:0 
+ %{e%}:е %{e%}:г
  %{ы%}:ы %{ы%}:0
 
+ %{¬%}:0        !
  %{⁺ⱽᴴ%}:0      ! Dominant vowel harmony
 
  %»:0           ! Incorporation boundary
@@ -25,6 +26,9 @@ Vow   = А Е Ё И О У Ы Э Ю Я
 Cns   = Б В Г Д Ж З Й К Ӄ Л Ԓ М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь ʼ
         б в г д ж з й к ӄ л ԓ м н ӈ п р с т ф х ц ч ш щ ъ ь ;
 
+Dominant = А О Я Ё 
+           а о я ё ; 
+
 Coronal = Т Л Й Ч Р
           т л й ч р ;
 
@@ -36,22 +40,34 @@ Rules
 "Ergative stem allomorph after vowel"
 %{t%}:т <=> :Vow %>: _ ;
 
+"Allative stem allomorphy after consonant"
+%{e%}:е <=> :Cns %>: _ ;
+
+"Allative stem allomorphy after vowel"
+%{e%}:г <=> :Vow %>: _ ;
+
+"Stem final vowel deletion"
+Vx:0 <=> _ %{¬%}: ; 
+      where Vx in ( а е ё и о у ы э ю я ) ; 
+
 "Vowel harmony for E (dominant)"
-%{E%}:а <=> [ а: | о: | %{⁺ⱽᴴ%}: ] :* _ ; 
-                                  _ :* [ а: | о: | %{⁺ⱽᴴ%}: ] :* ; 
+%{E%}:а <=> [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
+                                        _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] :* ; 
 
 "Vowel harmony for E"
-%{E%}:э <=>                            _ ; 
-            except 
-               [ а: | о: | %{⁺ⱽᴴ%}: ] :* _ ; 
-                                       _ :* [ а: | о: | %{⁺ⱽᴴ%}: ] :* ; 
+%{E%}:э <=>                             _ ; 
+            except
+            [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
+                                        _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] :* ; 
 
 "Vowel harmony for non-archiphonemic vowels (dominant)"
-Vx:Vy <=> [ а: | о: | %{⁺ⱽᴴ%}: ] :* _ ; 
-                                  _ :* [ а: | о: | %{⁺ⱽᴴ%}: ] ; 
+Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
+                                        _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] ; 
+        except 
+                                        _ :* %{¬%}: ; 
         where 
-            Vx in ( у ) 
-            Vy in ( о ) ;
+            Vx in ( у э ) 
+            Vy in ( о а ) matched ;
 
 
 "Vowel coronal singulative allomorph with -г"
@@ -67,7 +83,8 @@ Vx:Vy <=> [ а: | о: | %{⁺ⱽᴴ%}: ] :* _ ;
 
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
-                           %>: :Coronal _ ; 
+                                %>: :Coronal _ ; 
+                                             _ :Cns (:0) %{¬%}: ;
 
 ! Vowel >   л г
 ! Cns   > ы л г
