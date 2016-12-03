@@ -58,9 +58,14 @@ Multichar_Symbols
 
 %<sent%>
 
+%{T%}
+%{N%}
+%{E%}
 %{ы%}
 %{к%}
 %{е%}
+
+%{¶%}
 
 %[%+ны%]
 %[%+ӄэна%]
@@ -76,84 +81,79 @@ Multichar_Symbols
 
 LEXICON Root
 
+Nouns ;
 Conjunctions ;
 Postpositions ;
 Pronouns ;
 Numerals ;
-Nouns ;
 Adverbs ;
 Interjections ;
 Punctuation ;
 
-V-PREFIX ;
+!V-PREFIX ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON K 
+!LEXICON K 
+!
+!# ;
 
-# ;
+!LEXICON POSS
+!
+!%<px2sg%>:%>йгыт K ;
+!
+!K ;
 
-LEXICON POSS
+!LEXICON CASE-ABL
 
-%<px2sg%>:%>йгыт K ;
+!%<abl%>:%>йпы # ;
 
-K ;
+!LEXICON CASE-LOC 
+!
+!%<loc%>: # ;
+!%<dat%>:%>ты # ;
+!%<ori%>:%>ъет # ;
 
-LEXICON CASE-ABL
+!LEXICON PERS
+!
+!%<s_pl3%>:%>т # ;
 
-%<abl%>:%>йпы # ;
+!LEXICON V-AFFIX 
+!
+!%[%+ӄэна%]%<impf%>:%>ӄэна PERS ;
+!%<inf%>:%>н # ; 
 
-LEXICON CASE-LOC 
+!LEXICON V-INCORP
+!
+!%[%→%]%+: Verbs ;
+!
+!LEXICON V-IV
+!
+!%<v%>%<iv%>: V-AFFIX  ; 
+!%<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
-%<loc%>: # ;
-%<dat%>:%>ты # ;
-%<ori%>:%>ъет # ;
+!LEXICON N-COMPOUND 
+!
+!%<cmp%>%+:%» Nouns ;
 
-LEXICON PERS
+LEXICON N-QORA-ABS
 
-%<s_pl3%>:%>т # ;
+%<n%>%<sg%>%<abs%>:%>ӈы # ;
+!DERIV ;
 
-LEXICON V-AFFIX 
+LEXICON N-QORA-OBL
 
-%[%+ӄэна%]%<impf%>:%>ӄэна PERS ;
-%<inf%>:%>н # ; 
+%<n%>%<sp%>%<erg%>:%>%{T%}%{E%} # ;
 
-LEXICON V-INCORP
+LEXICON N-TITI
 
-%[%→%]%+: Verbs ;
+N-QORA-ABS ;
+N-QORA-OBL ; 
 
-LEXICON V-IV
+LEXICON N-UUNX 
 
-%<v%>%<iv%>: V-AFFIX  ; 
-%<v%>%<iv%>%<incorp%>: V-INCORP ; 
-
-LEXICON N-COMPOUND 
-
-%<cmp%>%+:%» Nouns ;
-
-LEXICON N-OORAVETLAN
-
-%<n%>%<sp%>: N-COMPOUND ; 
-%<n%>%<sp%>: CASE-ABL ;
-%<n%>%<sp%>: CASE-LOC ;
-%<n%>%<sg%>%<abs%>:%> POSS ;
-%<n%>%<sg%>%<abs%>:%>н # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
-
-LEXICON N-TSJENGYL 
-
-%<n%>%<sp%>: N-COMPOUND ; 
-%<n%>%<sp%>: CASE-ABL ; 
-%<n%>%<sg%>%<abs%>: # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
-
-LEXICON N-JARANGY
-
-%<n%>%<sp%>: N-COMPOUND ; 
-%<n%>%<sg%>%<abs%>:%>ӈы POSS ;
-%<n%>%<pl%>%<abs%>:%>т # ;
-%<n%>%<sp%>: CASE-ABL ; 
-%<n%>%<sp%>:%{к%} CASE-LOC ; 
+%<n%>%<sp%>%<erg%>:%>%{T%}%{E%} # ;
+%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{¶%}%>%{ы%}н # ;
 
 LEXICON PRON-GYM
 
@@ -173,11 +173,11 @@ LEXICON ADV
 
 %<adv%>: # ;
 
-LEXICON V-PREFIX
-
-%[%+ны%]:ны%> Verbs ;
-              Verbs ; 
-
+!LEXICON V-PREFIX
+!
+!%[%+ны%]:ны%> Verbs ;
+!              Verbs ; 
+!
 
 LEXICON CC 
 
@@ -215,11 +215,13 @@ LEXICON Numerals
 
 LEXICON Nouns 
 
-ӄораӈы:ӄора N-JARANGY ; ! "олень"
-яраӈы:яра N-JARANGY ; ! "дом"
-о'равэтԓьан:о'равэтԓьа N-OORAVETLAN ; ! "человек"
-! stem: .ченле.|.чянля.|чеңыл.|ченле.
-чеӈыл:чеӈ%{ы%}л%{е%} N-TSJENGYL ; ! "ящик"
+ӄораӈы:ӄаа N-QORA-OBL  ; ! "олень"
+ӄораӈы:ӄора N-QORA-ABS ; ! "олень"
+
+титиӈы:тити N-TITI ; ! "иголка"
+!аӈар:аӈар N-TITI ; ! "звезда"
+
+уунъыт:уунъ N-UUNX ; ! "ягоды"
 
 LEXICON Adverbs
 
@@ -228,11 +230,11 @@ LEXICON Adverbs
 игыр:игыр ADV ; ! "сегодня"
 
 
-LEXICON Verbs 
-
-рагты:рагты V-IV ; ! ""
-тыԓя:тыԓя V-IV ; ! ""
-чейвы:чейвы V-IV ; ! "ходить"
+!LEXICON Verbs 
+!
+!рагты:рагты V-IV ; ! ""
+!тыԓя:тыԓя V-IV ; ! ""
+!чейвы:чейвы V-IV ; ! "ходить"
 !льук:льук V-TV ; ! "видеть"
 
 LEXICON Interjections 

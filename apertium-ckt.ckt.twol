@@ -3,11 +3,21 @@ Alphabet
  А Б В Г Д Е Ё Ж З И Й К Ӄ Л Ԓ М Н Ӈ О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
  а б в г д е ё ж з и й к ӄ л ԓ м н ӈ о п р с т у ф х ц ч ш щ ъ ы ь э ю я
 
+ у:о
+
+ %{T%}:т %{T%}:0
+ %{E%}:э %{T%}:а 
+ %{N%}:ӈ %{N%}:г
+
  %{к%}:к %{к%}:г 
  %{е%}:е %{е%}:0 
- %{ы%}:ы 
+ %{ы%}:ы %{ы%}:0
 
- %»:0 %>:0  ;
+ %{¶%}:0          ! Dominant vowel harmony
+
+ %»:0           ! Incorporation boundary
+ %>:0           ! Morpheme boundary
+  ;
 
 Sets
 
@@ -17,23 +27,53 @@ Vow   = А Е Ё И О У Ы Э Ю Я
 Cns   = Б В Г Д Ж З Й К Ӄ Л Ԓ М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь
         б в г д ж з й к ӄ л ԓ м н ӈ п р с т ф х ц ч ш щ ъ ь ;
 
+Coronal = Т Л Й Ч Р
+          т л й ч р ;
+
 Rules 
 
-"Fleeting vowel"
-%{ы%}:0 <=> _ :Cns (:Vow) [ %>: | %»: ]  ;
+"Ergative stem allomorphy after consonant"
+%{T%}:0 <=> :Cns %>: _ ;
 
-! ч е ӈ {ы} л {е} > т
-! ч е ӈ  0  л  е  0 т
+"Ergative stem allomorph after vowel"
+%{T%}:т <=> :Vow %>: _ ;
+
+"Vowel harmony for E (dominant)"
+%{E%}:а <=> [ а: | о: | %{¶%}: ] :* _ ; 
+                                  _ :* [ а: | о: | %{¶%}: ] :* ; 
+
+"Vowel harmony for E"
+%{E%}:э <=>                            _ ; 
+            except 
+               [ а: | о: | %{¶%}: ] :* _ ; 
+                                  _ :* [ а: | о: | %{¶%}: ] :* ; 
+
+"Vowel harmony for non-archiphonemic vowels (dominant)"
+Vx:Vy <=> [ а: | о: | %{¶%}: ] :* _ ; 
+                                  _ :* [ а: | о: | %{¶%}: ] :* ; 
+        where 
+            Vx in ( у ) 
+            Vy in ( о ) ;
 
 
-"Stem vowel deletion in nominative"
-%{е%}:0 <=> _ .#. ;
+"Vowel coronal singulative allomorph with -г"
+%{N%}:г <=> [ :Vow | :Cns - :Coronal ] %>: %{ы%}: л (:0) _ ; 
 
-! ч е ӈ {ы} л {е} 
-! ч е ӈ  ы  л  0  
+! у у н ъ > {ы} л {ы} {N} > {ы} н
+! о о н ъ 0  ы  л  0   г  0  ы  н
 
-"Denasilisation"
-ӈ:н <=> _ (:0) л ; 
+"Vowel coronal singulative allomorph with -ӈ"
+%{N%}:ӈ <=>  :Coronal %>: _ ; 
+         except 
+          [ :Vow | :Cns - :Coronal ] %>: %{ы%}: л (:0) _ ; 
 
-"Assimilation"
-%{к%}:к <=> _ .#. ;
+"Consonant final schwa epenthesis"
+%{ы%}:ы <=>     [ :Cns - :Coronal ] %>: _  ; 
+                           %>: :Coronal _ ; 
+
+! Vowel >   л г
+! Cns   > ы л г
+! Cor   > л ы ӈ 
+
+! у:о у:о н:н ъ:ъ >:0 {ы}:ы л:л {ы}:0 {N}:г >:0 {ы}:ы н
+
