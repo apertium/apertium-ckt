@@ -1,0 +1,14 @@
+1	Айвэ	айвэ	ADV	adv	_	3	advmod	_	айвэ|adv
+2	экык	экык	NOUN	n	Case=Abs|Number=Sing	3	nsubj	_	экык|n|sg|abs
+3	пыкиргъи	пыкир	VERB	v	Number[abs]=Sing|Person[abs]=3	0	root	_	пыкир|v|iv|perf|ssg3
+4	.	.	PUNCT	sent	_	3	punct	_	.|sent
+
+1	Энмэн	энмэн	ADV	adv	_	5	advmod	_	энмэн|adv
+2	ӄорайпы	ӄора	NOUN	n	Case=Abl	5	nmod	_	ӄора|n|abl
+3	ӈирэӄ	ӈирэӄ	NUM	num	_	4	nummod	_	ӈирэӄ|num
+4	о'равэтԓьат	о'равэтԓьа	NOUN	n	Case=Abs|Number=Plur	5	nsubj	_	о'равэтԓьа|n|pl|abs
+5-6	нырагтытыԓяӄэнат	_	_	_	_	_	_	_	_
+5	_	тыԓя	VERB	v	Number[abs]=Plur|Person[abs]=3	0	root	_	тыԓя|v|iv|impf|spl3
+6	_	рагты	VERB	v	_	5	x	_	рагты|v|iv|incorp
+7	.	.	PUNCT	sent	_	5	punct	_	.|sent
+

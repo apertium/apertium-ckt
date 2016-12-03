@@ -5,8 +5,8 @@ Alphabet
 
  %'
 
- %{T%}:т %{T%}:0
- %{E%}:э %{T%}:а 
+ %{t%}:т %{t%}:0
+ %{E%}:э %{t%}:а 
  %{N%}:ӈ %{N%}:г
 
  %{к%}:к %{к%}:г 
@@ -33,10 +33,10 @@ Coronal = Т Л Й Ч Р
 Rules 
 
 "Ergative stem allomorphy after consonant"
-%{T%}:0 <=> :Cns %>: _ ;
+%{t%}:0 <=> :Cns %>: _ ;
 
 "Ergative stem allomorph after vowel"
-%{T%}:т <=> :Vow %>: _ ;
+%{t%}:т <=> :Vow %>: _ ;
 
 "Vowel harmony for E (dominant)"
 %{E%}:а <=> [ а: | о: | %{¶%}: ] :* _ ; 

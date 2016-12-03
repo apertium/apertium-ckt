@@ -14,9 +14,12 @@
 /autogen.sh -text
 /ckt.prob -text svneol=unset#unset
 /configure.ac -text
+dev/countstems.sh -text
 dev/spellrelax.twol -text
 /modes.xml -text
 tests/singulative.yaml -text
 texts/examples.vislcg.txt -text
 texts/kymytval_sverennyj.vislcg.txt -text
 texts/puupankki.ckt.feats -text
+texts/puupankki/puupankki.ckt.conllu -text
+texts/puupankki/puupankki.ckt.tagged -text
