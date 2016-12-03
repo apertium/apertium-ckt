@@ -8,14 +8,16 @@ Alphabet
  %{N%}:ӈ %{N%}:г
 
  %{к%}:к %{к%}:г 
- %{e%}:е %{e%}:г
+ %{e%}:э %{e%}:г
  %{ы%}:ы %{ы%}:0
+ %{J%}:й %{J%}:э %{J%}:г
 
- %{¬%}:0        !
- %{⁺ⱽᴴ%}:0      ! Dominant vowel harmony
+ %{·%}:0         !
+ %{°%}:0         ! 
+ %{⁺ⱽᴴ%}:0       ! Dominant vowel harmony
 
- %»:0           ! Incorporation boundary
- %>:0           ! Morpheme boundary
+ %»:0            ! Incorporation boundary
+ %>:0            ! Morpheme boundary
   ;
 
 Sets
@@ -47,8 +49,12 @@ Rules
 %{e%}:г <=> :Vow %>: _ ;
 
 "Stem final vowel deletion"
-Vx:0 <=> _ %{¬%}: ; 
+Vx:0 <=> _ %{·%}: .#. ; 
       where Vx in ( а е ё и о у ы э ю я ) ; 
+
+"Stem final vowel reduction"
+Vx:ы <=> _ %{°%}: .#. ; 
+      where Vx in ( а е ё и о у э ю я ) ; 
 
 "Vowel harmony for E (dominant)"
 %{E%}:а <=> [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
@@ -64,7 +70,7 @@ Vx:0 <=> _ %{¬%}: ;
 Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
                                         _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] ; 
         except 
-                                        _ :* %{¬%}: ; 
+                                        _ [ %{·%}: | %{°%}: ]  ; 
         where 
             Vx in ( у э ) 
             Vy in ( о а ) matched ;
@@ -81,14 +87,29 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
          except 
           [ :Vow | :Cns - :Coronal ] %>: %{ы%}: л (:0) _ ; 
 
+"Allative suffix allomorphy"
+%{J%}:й <=> :Vow %>: _ ;
+
+"Allative suffix allomorphy"
+%{ы%}:0 <=> :Vow %>: %{J%}: _ ;
+
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
                                 %>: :Coronal _ ; 
-                                             _ :Cns (:0) %{¬%}: ;
+                                             _ :Cns (:0) %{·%}: ;
+                                %{J%}: :0 :п _ ;
+         except
+                             :Vow %>: %{J%}: _ ;
+
 
 ! Vowel >   л г
 ! Cns   > ы л г
 ! Cor   > л ы ӈ 
 
 ! у:о у:о н:н ъ:ъ >:0 {ы}:ы л:л {ы}:0 {N}:г {⁺ⱽᴴ}:0 >:0 {ы}:ы н
+ 
+! у:о м:м ӄ:ӄ э:а >:0 {J}:й {ы}:0 п {ы}:ы {⁺ⱽᴴ}:0
+
+! а:а й:й м:м а:а к:к >:0 {J}:г {ы}:ы п:п {ы}:ы {⁺ⱽᴴ}:0
+
 
