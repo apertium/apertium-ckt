@@ -1,0 +1,13 @@
+_	tv	s_sg3	_	_	Person[erg]=3|Number[erg]=Sing
+_	iv	s_sg3	_	_	Person[abs]=3|Number[abs]=Sing
+_	iv	s_pl3	_	_	Person[abs]=3|Number[abs]=Plur
+_	_	sg	_	_	Number=Sing
+_	_	pl	_	_	Number=Plur
+_	_	abs	_	_	Case=Abs
+_	_	erg	_	_	Case=Erg
+_	_	abl	_	_	Case=Abl
+_	v	_	_	VERB	_
+_	n	_	_	NOUN	_
+_	num	_	_	NUM	_
+_	adv	_	_	ADV	_
+_	sent	_	_	PUNCT	_
