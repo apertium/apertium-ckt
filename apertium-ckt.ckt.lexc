@@ -84,7 +84,7 @@ Multichar_Symbols
 %{к%}
 %{е%}
 
-%{¶%}                     ! Trigger for dominant harmony
+%{⁺ⱽᴴ%}                     ! Trigger for dominant harmony
 %{☭%}                     ! Trigger for loan word phonology
 
 %[%+ны%]
@@ -159,14 +159,18 @@ Miscellaneous ;
 !
 !%<cmp%>%+:%» Nouns ;
 
+LEXICON CASES-OBL
+
+%<sp%>%<erg%>:%>%{t%}%{E%} # ;
+%<sp%>%<ins%>:%>%{t%}%{E%} # ;
+
 LEXICON N-QORA-ABS
 
 %<n%>%<sg%>%<abs%>:%>ӈы # ;
-!DERIV ;
 
 LEXICON N-QORA-OBL
 
-%<n%>%<sp%>%<erg%>:%>%{t%}%{E%} # ;
+%<n%>: CASES-OBL ; 
 
 LEXICON N-TITI
 
@@ -175,8 +179,8 @@ N-QORA-OBL ;
 
 LEXICON N-UUNX 
 
-%<n%>%<sp%>%<erg%>:%>%{t%}%{E%} # ;
-%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{¶%}%>%{ы%}н # ;
+%<n%>: CASES-OBL ; 
+%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н # ;
 
 LEXICON PRON-GYM
 
