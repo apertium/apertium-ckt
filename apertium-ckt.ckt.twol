@@ -16,7 +16,7 @@ Alphabet
  %{°%}:0         ! 
  %{⁺ⱽᴴ%}:0       ! Dominant vowel harmony
 
- %»:0            ! Incorporation boundary
+ %→:0            ! Incorporation boundary
  %>:0            ! Morpheme boundary
   ;
 
@@ -94,14 +94,17 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
 
 "Allative suffix allomorphy"
 %{ы%}:0 <=> :Vow %>: %{J%}: _ ;
+            :Vow %>: _ :к ;        ! Locative
 
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
                                 %>: :Coronal _ ; 
                                              _ :Cns (:0) %{·%}: ;
                                 %{J%}: :0 :п _ ;
+                                .#. :н _ %>: ;
          except
                              :Vow %>: %{J%}: _ ;
+                             :Vow %>: _ :к ;
 
 
 ! Vowel >   л г
@@ -113,5 +116,7 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
 ! у:о м:м ӄ:ӄ э:а >:0 {J}:й {ы}:0 п {ы}:ы {⁺ⱽᴴ}:0
 
 ! а:а й:й м:м а:а к:к >:0 {J}:г {ы}:ы п:п {ы}:ы {⁺ⱽᴴ}:0
+
+! н:н {ы}:ы >:0 ч:ч и:и и:и т:т >:0 ӄ:ӄ и:и н:н
 
 

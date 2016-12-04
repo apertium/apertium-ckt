@@ -33,6 +33,13 @@ Multichar_Symbols
 %<s_pl2%>                 ! 
 %<s_pl3%>                 ! 
 
+%<a_sg1%>                 ! 
+%<a_sg2%>                 ! 
+%<a_sg3%>                 ! 
+%<a_pl1%>                 ! 
+%<a_pl2%>                 ! 
+%<a_pl3%>                 ! 
+
 %<o_sg1%>                 !
 %<o_sg2%>                 ! 
 %<o_sg3%>                 ! 
@@ -66,6 +73,9 @@ Multichar_Symbols
 %<equ%>                   ! Equative
 %<loc%>                   ! Locative
 %<dat%>                   ! Dative
+
+%<ine%>                   ! Inessive
+%<subst%>                 ! Substantive
 
 %<percent%>               ! Percent
 %<sent%>                  ! Sentence marker
@@ -114,6 +124,7 @@ Postpositions ;
 Pronouns ;
 Numerals ;
 Adverbs ;
+Adjectives ;
 Interjections ;
 Punctuation ;
 Miscellaneous ;
@@ -123,9 +134,10 @@ Miscellaneous ;
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-!LEXICON K                                   !! Word-final clitics
-!
-!# ;
+LEXICON K                                   !! Word-final clitics
+
+%+ым%<mod%>:%-ым # ; 
+# ;
 
 
 !LEXICON POSS                                !! Possessive suffixes
@@ -134,10 +146,16 @@ Miscellaneous ;
 !
 !K ;
 
-!LEXICON V-AFFIX                             !! Verb affixes
+!LEXICON V-IV-AFFIX                          !! Verb affixes [intransitive]
 !
 !%[%+ӄэна%]%<impf%>:%>ӄэна PERS ;
 !%<inf%>:%>н # ; 
+
+!LEXICON V-TV-AFFIX                          !! Verb affixes [transitive]
+!
+!%<aor%>%<a_sg2%>%<o_pl3%>:%>нэт ;           !! 
+!%<aor%>%<a_sg3%>%<o_sg3%>:%>нин ;           !! [stem]-нин
+!%<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт ;         !! [stem]-нинэт
 
 !LEXICON V-INCORP                            !! Cycle for verb incorporation
 !
@@ -146,18 +164,36 @@ Miscellaneous ;
 
 !LEXICON V-IV                                !! Intransitive verb stems
 !
-!%<v%>%<iv%>: V-AFFIX  ; 
+!%<v%>%<iv%>: V-IV-AFFIX  ; 
 !%<v%>%<iv%>%<incorp%>: V-INCORP ; 
+
+!LEXICON V-TV                                !! Transitive verb stems
+!
+!%<v%>%<tv%>: V-TV-AFFIX ;
 
 !LEXICON N-COMPOUND                          !! Cycle for nominal compounding
 !
 !%<cmp%>%+:%→ Nouns ;
+
+LEXICON N-DERIV-SPACIAL
+
+%<sg%>%<abs%>: # ;
+%<pl%>%<abs%>:%>т # ;
+%<sp%>%<ins%>:%>%{t%}%{E%} # ;
+%<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} # ;
+%<sp%>%<abl%>:%>%{J%}%{ы%}п%{ы%}%{⁺ⱽᴴ%} # ;
+
+LEXICON N-DERIV
+
+%+чыку%<der%>%<subst%>:%>чыку N-DERIV-SPACIAL ; 
+%+ткын%<der%>%<subst%>:%>тк%{ы%}н%{⁺ⱽᴴ%} N-DERIV-SPACIAL ; 
 
 LEXICON CASES-OBL                            !! 
 
 %<sp%>%<erg%>:%>%{t%}%{E%} # ;
 %<sp%>%<ins%>:%>%{t%}%{E%} # ;
 %<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} # ;
+%<sp%>%<loc%>:%>%{ы%}к # ;
 
 LEXICON CASES-ABL
 
@@ -166,26 +202,34 @@ LEXICON CASES-ABL
 LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
 
 %<n%>%<sg%>%<abs%>: # ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
 %<n%>: CASES-OBL ; 
 %<n%>: CASES-ABL ; 
+%<n%>: N-DERIV ; 
 
 LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced final vowel
 
 %<n%>%<sg%>%<abs%>:%{°%} # ;
+%<n%>%<pl%>%<abs%>:%>т # ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
+%<n%>: N-DERIV ; 
 
 LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted final vowel
 
 %<n%>%<sg%>%<abs%>:%{·%} # ;
+%<n%>%<pl%>%<abs%>:%>т # ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
+%<n%>: N-DERIV ; 
 
 LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 
 %<n%>%<sg%>%<abs%>:н # ;
+%<n%>%<pl%>%<abs%>:%>т # ;
 %<n%>:н CASES-OBL  ;
 %<n%>:н CASES-ABL ; 
+%<n%>: N-DERIV ; 
 
 LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
 
@@ -195,12 +239,14 @@ LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. s
 LEXICON N-IV-QORA-OBL                        !! Class IV: Suffix -ӈы [irreg. stem]
 
 %<n%>: CASES-OBL ; 
+%<n%>: N-DERIV ; 
  
 LEXICON N-IV-TITI                            !! Class IV: Suffix -ӈы
 
 %<n%>%<sg%>%<abs%>:%>ӈы # ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
+%<n%>: N-DERIV ; 
 
 LEXICON N-UUNX                               !! ??
 
@@ -236,9 +282,13 @@ LEXICON NUM                                  !! Numeral lexicon
 %<num%>: # ;
 %<num%>%<ord%>:%>эв # ;
 
+LEXICON A
+
+%<adj%>%<pred%>:%>ӄин # ;
+
 LEXICON ADV                                  !! Adverb lexicon
 
-%<adv%>: # ;
+%<adv%>: K ;
 
 !LEXICON V-PREFIX
 !
@@ -279,6 +329,39 @@ LEXICON Miscellaneous
 вай%<ij%>:вай # ;
 вайвай%<ij%>:вайвай # ;
 
+аʼа:аʼа  ADV ; ! "что? (в вопросах)"
+алымы:алымы  ADV ; ! "1. ведь; 2. же; 3. несмотря на..."
+ванэван:ванэван  ADV ; ! "нет"
+вэԓер:вэԓер  ADV ; ! "1) хоть бы; 2) хватит, достаточно"
+вэԓчиин:вэԓчиин  ADV ; ! "1. всё равно уж; 2. пусть; 3. и всё же"
+вэԓынкыӄун:вэԓынкыӄун  ADV ; ! "спасибо"
+еп:еп  ADV ; ! "1) ещё не 2) пока ещё"
+ӄун:ӄун  ADV ; ! "ну"
+ӄырым:ӄырым  ADV ; ! "(2) 1. нет; 2. не "
+ӄырымэн:ӄырымэн  ADV ; ! "(2) не; ӄырымэн микын ничей"
+ӄэйвипэ:ӄэйвипэ  ADV ; ! "действительно ли? см. ӄэйгипэ"
+ӄэйвэ:ӄэйвэ  ADV ; ! "действительно"
+ӄэйвэлым:ӄэйвэлым  ADV ; ! "и правда"
+ӄэйгипэ:ӄэйгипэ  ADV ; ! "действительно ли? см. ӄэйвипэ"
+ӄэйӈун:ӄэйӈун  ADV ; ! "а то опять"
+ԓеӈтымӈэ:ԓеӈтымӈэ  ADV ; ! "(2) как-нибудь, просто так"
+ӈан:ӈан  ADV ; ! "там (дейктическая частица)"
+ӈоот:ӈоот  ADV ; ! "вот"
+рай:рай  ADV ; ! "вон (указание на предмет)"
+рыпэт:рыпэт  ADV ; ! "даже"
+уйӈэ:уйӈэ  ADV ; ! "нет (отсутствие)"
+чеӈэр:чеӈэр  ADV ; ! "раз уж"
+чит:чит  ADV ; ! "раньше, сначала, вначале"
+ынӈэ:ынӈэ  ADV ; ! "нет!  не надо "
+ытԓён%-ым:ытԓён%-ым  ADV ; ! "итак"
+этԓы:этԓы  ADV ; ! "нет; этлы титэ никогда; этлы ынӈин не так"
+этъопэԓ:этъопэԓ  ADV ; ! "лучше "
+эты:эты  ADV ; ! "значит"
+эченур:эченур  ADV ; ! "1. лучше; 2. только"
+
+ымы:ымы ADV ; ! "и, тоже"
+
+
 LEXICON Conjunctions 
 
 ынкъам:ынкъам CC ; 
@@ -311,6 +394,7 @@ LEXICON Nouns
 аймак:аймак N-Ia-AJMAK ; ! "туша"
 ӈэвысӄэт:ӈэвысӄэт N-Ia-AJMAK ; ! "женщина"
 ӈэԓвыԓ:ӈэԓвыԓ N-Ia-AJMAK ; ! "табун"
+ӈинӄэй:ӈинӄэй N-Ia-AJMAK ; ! "мальчик"
 
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
@@ -320,6 +404,8 @@ LEXICON Nouns
 
 рэнмын:рэнм%{ы%} N-III-RENMYN ; ! "стена"
 ӈэвъэн:ӈэвъэ N-III-RENMYN ; ! "жена"
+ԓыгиннээн:ԓыгиннээ N-III-RENMYN ; ! "голец"
+рыпын:рыпы N-III-RENMYN ; ! "мездра"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -341,8 +427,14 @@ LEXICON Nouns
 
 !LEXICON ProperNouns 
 
-!LEXICON Adjectives 
+LEXICON Adjectives 
 
+:н%{ы%}%> AdjStems ;
+
+LEXICON AdjStems
+
+чиит:чиит A ;   ! "тёплый"
+ԓгы:ԓгы A ;  ! "белый, чистый"
 
 LEXICON Adverbs
 
@@ -966,6 +1058,7 @@ LEXICON Adverbs
 !тыԓя:тыԓя V-IV ; ! ""
 !чейвы:чейвы V-IV ; ! "ходить"
 !льук:льук V-TV ; ! "видеть"
+!ивик:ив V-TV ; ! "говорить"
 
 LEXICON Interjections 
 
