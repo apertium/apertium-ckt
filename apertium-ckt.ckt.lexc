@@ -47,12 +47,6 @@ Multichar_Symbols
 %<o_pl2%>                 ! 
 %<o_pl3%>                 !
 
-%<px1sg%>                 ! 
-%<px2sg%>                 ! 
-%<px3sg%>                 ! 
-%<px1pl%>                 ! 
-%<px2pl%>                 ! 
-%<px3pl%>                 ! 3rd person plural possessive 
 
 %<pers%>                  ! Personal
 %<dem%>                   ! Demonstrative
@@ -223,12 +217,34 @@ LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted fin
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
 
+LEXICON N-IIa-VYT-ABS                        !! Class IIa: Total reduplication 
+
+%<n%>%<sg%>%<abs%>: # ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
+%<n%>: CASES-ABL ; 
+
+LEXICON N-IIa-VYT-OBL                        !! Class IIa: Total reduplication
+
+%<n%>: CASES-OBL ; 
+%<n%>: N-DERIV ; 
+
+LEXICON N-IIb-TANNGYTAN-SG-ABS               !! Class IIb: Partial reduplication 
+
+%<n%>%<sg%>%<abs%>: # ;
+%<n%>: CASES-ABL ; 
+
+LEXICON N-IIb-TANNGYTAN                      !! Class IIb: Partial reduplication
+
+%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
+%<n%>: CASES-OBL ; 
+%<n%>: N-DERIV ; 
+  
 LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 
 %<n%>%<sg%>%<abs%>:н # ;
 %<n%>%<pl%>%<abs%>:%>т # ;
-%<n%>:н CASES-OBL  ;
-%<n%>:н CASES-ABL ; 
+%<n%>: CASES-OBL  ;
+%<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
 
 LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
@@ -262,6 +278,18 @@ LEXICON PRON-GYM
 %<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:ыкы # ;
 %<prn%>%<pers%>%<p1%>%<sg%>%<all%>:ыкагты # ;
 %<prn%>%<pers%>%<p1%>%<sg%>%<equ%>:ыгмил # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%+инэ%<der%>%<subst%>:%>нин N-DERIV-SPACIAL ;
+
+LEXICON PRON-GYT
+
+%<prn%>%<pers%>%<p2%>%<sg%>%<abs%>:т # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<erg%>:тнан # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:тык # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:тыкы # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<all%>:тыкагты # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<equ%>:тыгмил # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%+инэ%<der%>%<subst%>:%>нин N-DERIV-SPACIAL ;
+
 
 LEXICON PRON-YTLJON
 
@@ -360,6 +388,7 @@ LEXICON Miscellaneous
 эченур:эченур  ADV ; ! "1. лучше; 2. только"
 
 ымы:ымы ADV ; ! "и, тоже"
+нэмыӄэй:нэмыӄэй ADV ; ! "тоже"
 
 
 LEXICON Conjunctions 
@@ -378,6 +407,7 @@ LEXICON Postpositions
 LEXICON Pronouns 
 
 гым:гым PRON-GYM ; 
+гыт:гыт PRON-GYT ; 
 ытԓён:ы PRON-YTLJON ; 
 
 ынӄэн:ынӄэн PRON-YNQEN ; 
@@ -395,6 +425,7 @@ LEXICON Nouns
 ӈэвысӄэт:ӈэвысӄэт N-Ia-AJMAK ; ! "женщина"
 ӈэԓвыԓ:ӈэԓвыԓ N-Ia-AJMAK ; ! "табун"
 ӈинӄэй:ӈинӄэй N-Ia-AJMAK ; ! "мальчик"
+тумгытум:тумгытум N-Ia-AJMAK ; ! "товарищ"
 
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
@@ -402,17 +433,26 @@ LEXICON Nouns
 экык:эк%{ы%}кэ N-Ic-EKYK ; ! "сын"
 ӈээкык:ӈээк%{ы%}кэ N-Ic-EKYK ; ! "дочь"
 
+вытвыт:вытвыт N-IIa-VYT-ABS ; ! "лист"
+вытвыт:выт N-IIa-VYT-OBL ; ! "лист"
+чотчот:чотчот N-IIa-VYT-ABS ; ! "подушка"
+чотчот:чот N-IIa-VYT-OBL ; ! "подушка"
+
+танӈытан:танӈ N-IIb-TANNGYTAN ; ! "чужак"
+танӈытан:танӈытан N-IIb-TANNGYTAN-SG-ABS ; ! "чужак" 
+
 рэнмын:рэнм%{ы%} N-III-RENMYN ; ! "стена"
 ӈэвъэн:ӈэвъэ N-III-RENMYN ; ! "жена"
 ԓыгиннээн:ԓыгиннээ N-III-RENMYN ; ! "голец"
 рыпын:рыпы N-III-RENMYN ; ! "мездра"
+эйгысӄын:эйгысӄ N-III-RENMYN ; ! "север"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
 кукэӈы:кукэ N-IV-TITI ; ! "котёл, кастрюля"
 ӄэмэӈы:ӄэмэ N-IV-TITI ; ! "деревянное блюдо для еды"
-ӄораӈы:ӄаа N-IV-QORA-OBL  ; ! "олень"
 ӄораӈы:ӄора N-IV-QORA-ABS ; ! "олень"
+ӄораӈы:ӄаа N-IV-QORA-OBL  ; ! "олень"
 рыпэӈы:рыпэ N-IV-TITI ; ! "молоток"
 титиӈы:тити N-IV-TITI ; ! "иголка"
 ыпаӈы:ыпа N-IV-TITI ; ! "бульон"
@@ -1067,6 +1107,7 @@ LEXICON Interjections
 аны:аны INTERJ ;  ! "ну"
 како:како INTERJ ; ! "ого"
 кита:кита INTERJ ; ! "ну-ка"
+ванэван:ванэван INTERJ ; ! "нет"
 
 алва:алва INTERJ ; ! "прочь!"
 аʼмын:аʼмын INTERJ ; ! "ой!"
