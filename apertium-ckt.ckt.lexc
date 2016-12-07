@@ -97,6 +97,12 @@ Multichar_Symbols
 %{☭%}                     ! Trigger for loan word phonology
 
 %[%+ны%]
+%[%+т%]
+%[%+к%]
+%[%+мыт%]
+%[%+мык%]
+%[%+рэ%]
+%[%+fut%]
 %[%+ӄэна%]
 %[→%]
 
@@ -122,8 +128,7 @@ Adjectives ;
 Interjections ;
 Punctuation ;
 Miscellaneous ;
-
-!V-PREFIX ;
+Prefixes ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -140,30 +145,59 @@ LEXICON K                                   !! Word-final clitics
 !
 !K ;
 
-!LEXICON V-IV-AFFIX                          !! Verb affixes [intransitive]
-!
-!%[%+ӄэна%]%<impf%>:%>ӄэна PERS ;
-!%<inf%>:%>н # ; 
+LEXICON V-NONFIN 
 
-!LEXICON V-TV-AFFIX                          !! Verb affixes [transitive]
-!
-!%<aor%>%<a_sg2%>%<o_pl3%>:%>нэт ;           !! 
-!%<aor%>%<a_sg3%>%<o_sg3%>:%>нин ;           !! [stem]-нин
-!%<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт ;         !! [stem]-нинэт
+%<inf%>:%>н # ; 
+
+LEXICON V-IV-NEUT-AOR-FUT
+
+%[%+к%]%<s_sg1%>:%>к # ;
+%[%+к%]%<s_sg1%>%<theme%>:%>гъэк # ;
+%[%+мык%]%<s_pl1%>:%>мык # ;
+%<s_sg2%>:%>э # ;
+%<s_sg2%>%<theme%>:%>гъэ # ; 
+%<s_pl2%>:%>тык # ;
+%<s_sg3%>:%>э # ;
+%<s_sg3%>%<theme%>:%>гъэ # ; 
+%<s_pl3%>:%>т # ;
+%<s_pl3%>%<theme%>:%>гъэт # ;
+
+
+LEXICON V-IV-NEUT
+
+%<aor%>: V-IV-NEUT-AOR-FUT ;
+%[%+fut%]%<fut%>: V-IV-NEUT-AOR-FUT ;
+
+LEXICON V-IV-AFFIX                          !! Verb affixes [intransitive]
+
+%[%+ӄэна%]%<impf%>:%>ӄэна # ;
+
+V-NONFIN ; 
+V-IV-NEUT ; 
+!V-IV-PROG ; 
+
+LEXICON V-TV-AFFIX                          !! Verb affixes [transitive]
+
+%[%+ӄэна%]%<impf%>:%>ӄэна # ;
+%<aor%>%<a_sg2%>%<o_pl3%>:%>нэт # ;           !! 
+%<aor%>%<a_sg3%>%<o_sg3%>:%>нин # ;           !! [stem]-нин
+%<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт # ;         !! [stem]-нинэт
+
+V-NONFIN ; 
 
 !LEXICON V-INCORP                            !! Cycle for verb incorporation
 !
 !%[%→%]%+: Verbs ;
 
 
-!LEXICON V-IV                                !! Intransitive verb stems
-!
-!%<v%>%<iv%>: V-IV-AFFIX  ; 
+LEXICON V-IV                                !! Intransitive verb stems
+
+%<v%>%<iv%>: V-IV-AFFIX  ; 
 !%<v%>%<iv%>%<incorp%>: V-INCORP ; 
 
-!LEXICON V-TV                                !! Transitive verb stems
-!
-!%<v%>%<tv%>: V-TV-AFFIX ;
+LEXICON V-TV                                !! Transitive verb stems
+
+%<v%>%<tv%>: V-TV-AFFIX ;
 
 !LEXICON N-COMPOUND                          !! Cycle for nominal compounding
 !
@@ -318,11 +352,19 @@ LEXICON ADV                                  !! Adverb lexicon
 
 %<adv%>: K ;
 
-!LEXICON V-PREFIX
-!
-!%[%+ны%]:ны%> Verbs ;
-!              Verbs ; 
-!
+LEXICON Prefixes
+
+%[%+ны%]:ны%>   Verbs ;
+%[%+т%]:т%>     Tense ;
+%[%+мыт%]:мыт%> Tense ;
+Tense ;
+
+LEXICON Tense
+%[%+рэ%]:рэ%>   Verbs ;
+Verbs ; 
+
+
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -446,6 +488,7 @@ LEXICON Nouns
 ԓыгиннээн:ԓыгиннээ N-III-RENMYN ; ! "голец"
 рыпын:рыпы N-III-RENMYN ; ! "мездра"
 эйгысӄын:эйгысӄ N-III-RENMYN ; ! "север"
+ӄытан:ӄыта N-III-RENMYN ; ! "место"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -1092,13 +1135,14 @@ LEXICON Adverbs
 янраԓьо:янраԓьо  ADV ; ! "одиноко"
 янъян:янъян  ADV ; ! "на виду"
 
-!LEXICON Verbs 
-!
-!рагты:рагты V-IV ; ! ""
-!тыԓя:тыԓя V-IV ; ! ""
-!чейвы:чейвы V-IV ; ! "ходить"
-!льук:льук V-TV ; ! "видеть"
-!ивик:ив V-TV ; ! "говорить"
+LEXICON Verbs 
+
+рагты:рагты V-IV ; ! ""
+тыԓя:тыԓя V-IV ; ! ""
+ет:ет V-IV ; ! "прибыть"
+чейвы:чейвы V-IV ; ! "ходить"
+льук:льук V-TV ; ! "видеть"
+ивик:ив V-TV ; ! "говорить"
 
 LEXICON Interjections 
 

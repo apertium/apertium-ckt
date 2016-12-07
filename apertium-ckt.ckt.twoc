@@ -11,7 +11,14 @@ Alphabet
 
  %<v%>
 
- %[%+ны%]:0  %[%+ӄэна%]:0  
+ %[%+рэ%]:0 
+ %[%+fut%]:0 
+ %[%+мыт%]:0 
+ %[%+т%]:0 
+ %[%+мык%]:0 
+ %[%+к%]:0 
+ %[%+ны%]:0  
+ %[%+ӄэна%]:0  
 
  %[→%]:0 ;
 
@@ -21,8 +28,38 @@ Verb = %<v%> ;
 
 Rules 
 
+"Circumfix Aorist т-[stem]-к (block [+т])"
+%[%+т%]:0 /<= _ ; 
+   except
+       _ (:*) %[%+к%]:0 ; 
 
-"Circumfix"
+"Circumfix Aorist т-[stem]-к (block [+к])"
+%[%+к%]:0 /<= _ ; 
+   except
+       %[%+т%]:0 (:*) _ ; 
+
+"Circumfix Aorist мыт-[stem]-мык (block [+мыт])"
+%[%+мыт%]:0 /<= _ ; 
+   except
+       _ (:*) %[%+мык%]:0 ; 
+
+"Circumfix Aorist т-[stem]-к (block [+к])"
+%[%+к%]:0 /<= _ ; 
+   except
+       %[%+т%]:0 (:*) _ ; 
+
+"Circumfix Future рэ-[stem] (block [+рэ])"
+%[%+рэ%]:0 /<= _ ; 
+   except
+       _ (:*) %[%+fut%]:0 ; 
+
+"Circumfix Aorist рэ-[stem] (block [+fut])"
+%[%+fut%]:0 /<= _ ; 
+   except
+       %[%+рэ%]:0 (:*) _ ; 
+
+
+"Circumfix "
 %[%+ны%]:0 /<= _ ; 
    except
        _ (:*) %[%+ӄэна%]:0 ; 
