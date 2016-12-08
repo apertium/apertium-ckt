@@ -12,6 +12,8 @@ Alphabet
  %{ы%}:ы %{ы%}:0
  %{J%}:й %{J%}:э %{J%}:г
 
+ %{ъ%}:ъ %{ъ%}:0 
+
  %{·%}:0         !
  %{°%}:0         ! 
  %{⁺ⱽᴴ%}:0       ! Dominant vowel harmony
@@ -119,4 +121,8 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
 
 ! н:н {ы}:ы >:0 ч:ч и:и и:и т:т >:0 ӄ:ӄ и:и н:н
 
+"Glottal stop in prefixes before vowel" 
+%{ъ%}:ъ <=> _ %>: :Vow ; 
 
+"Glottal stop in prefixes before cons" 
+%{ъ%}:0 <=> _ %>: :Cns ; 

@@ -21,24 +21,28 @@ Multichar_Symbols
 %<incorp%>                ! 
 
 %<impf%>                  ! 
+%<cond%>                  ! 
+%<intn%>                  ! 
+%<aor%>                   ! 
+%<fut%>                   ! 
 
 %<p1%>                    ! 
 %<p2%>                    ! 
 %<p3%>                    !
 
-%<s_sg1%>                 ! 
-%<s_sg2%>                 ! 
-%<s_sg3%>                 ! 
-%<s_pl1%>                 ! 
-%<s_pl2%>                 ! 
-%<s_pl3%>                 ! 
+%<s_sg1%>                 ! Subject, 1st person singular 
+%<s_sg2%>                 ! Subject, 2nd person singular 
+%<s_sg3%>                 ! Subject, 3rd person singular 
+%<s_pl1%>                 ! Subject, 1st person plural 
+%<s_pl2%>                 ! Subject, 2nd person plural 
+%<s_pl3%>                 ! Subject, 3rd person plural 
 
-%<a_sg1%>                 ! 
-%<a_sg2%>                 ! 
-%<a_sg3%>                 ! 
-%<a_pl1%>                 ! 
-%<a_pl2%>                 ! 
-%<a_pl3%>                 ! 
+%<a_sg1%>                 ! Agent, 1st person singular 
+%<a_sg2%>                 ! Agent, 2nd person singular 
+%<a_sg3%>                 ! Agent, 3rd person singular 
+%<a_pl1%>                 ! Agent, 1st person plural
+%<a_pl2%>                 ! Agent, 2nd person plural
+%<a_pl3%>                 ! Agent, 3rd person plural
 
 %<o_sg1%>                 !
 %<o_sg2%>                 ! 
@@ -50,6 +54,7 @@ Multichar_Symbols
 
 %<pers%>                  ! Personal
 %<dem%>                   ! Demonstrative
+%<itg%>                   ! Interrogative
  
 %<ord%>                   ! Ordinal
 
@@ -64,7 +69,7 @@ Multichar_Symbols
 %<ori%>                   ! Orientative
 %<erg%>                   ! Ergative
 %<all%>                   ! Allative
-%<equ%>                   ! Equative
+%<ess%>                   ! Essive [Equative]
 %<loc%>                   ! Locative
 %<dat%>                   ! Dative
 
@@ -90,6 +95,7 @@ Multichar_Symbols
 %{к%}
 %{e%}                     ! э or г
 %{J%}                     ! й or э or г
+%{ъ%}                     ! Glottal stop
 
 %{⁺ⱽᴴ%}                   ! Trigger for dominant harmony
 %{·%}                     ! Trigger for stem-final vowel deletion
@@ -99,10 +105,16 @@ Multichar_Symbols
 %[%+ны%]
 %[%+т%]
 %[%+к%]
+%[%+н%]
+%[%+ӄ%]
+%[%+м%]
 %[%+мыт%]
+%[%+мын%]
 %[%+мык%]
 %[%+рэ%]
 %[%+fut%]
+%[%+cond%]
+%[%+intn%]
 %[%+ӄэна%]
 %[→%]
 
@@ -149,7 +161,7 @@ LEXICON V-NONFIN
 
 %<inf%>:%>н # ; 
 
-LEXICON V-IV-NEUT-AOR-FUT
+LEXICON V-IV-NEUT-COMMON
 
 %[%+к%]%<s_sg1%>:%>к # ;
 %[%+к%]%<s_sg1%>%<theme%>:%>гъэк # ;
@@ -157,18 +169,46 @@ LEXICON V-IV-NEUT-AOR-FUT
 %<s_sg2%>:%>э # ;
 %<s_sg2%>%<theme%>:%>гъэ # ; 
 %<s_pl2%>:%>тык # ;
+
+LEXICON V-IV-NEUT-AOR
+
 %<s_sg3%>:%>э # ;
 %<s_sg3%>%<theme%>:%>гъэ # ; 
 %<s_pl3%>:%>т # ;
 %<s_pl3%>%<theme%>:%>гъэт # ;
 
+V-IV-NEUT-COMMON ;
+
+LEXICON V-IV-NEUT-FUT
+
+%<s_sg1%>: # ;
+%<s_sg1%>%<theme%>:%>гъэ # ;
+%<s_pl1%>: # ;
+%<s_pl1%>%<theme%>:%>гъэ # ;
+%<s_sg2%>: # ;
+%<s_sg2%>%<theme%>:%>гъэ # ;
+%<s_pl2%>:%>нтык # ;
+%<s_sg3%>: # ;
+%<s_sg3%>%<theme%>:%>гъэ # ; 
+%<s_pl3%>:%>ӈыт # ;
+
+LEXICON V-IV-NEUT-INTN-COND
+
+%<s_sg3%>:%>н # ;
+%<s_sg3%>%<theme%>:%>гъэн # ; 
+%<s_pl3%>:%>т # ;
+%<s_pl3%>%<theme%>:%>нэт # ;
+
+V-IV-NEUT-COMMON ;
 
 LEXICON V-IV-NEUT
 
-%<aor%>: V-IV-NEUT-AOR-FUT ;
-%[%+fut%]%<fut%>: V-IV-NEUT-AOR-FUT ;
+%<aor%>: V-IV-NEUT-AOR ;
+%[%+fut%]%<fut%>: V-IV-NEUT-FUT ;
+%[%+cond%]%<cond%>: V-IV-NEUT-INTN-COND ; 
+%[%+intn%]%<intn%>: V-IV-NEUT-INTN-COND ; 
 
-LEXICON V-IV-AFFIX                          !! Verb affixes [intransitive]
+LEXICON V-IV-AFFIX                            !! Verb affixes [intransitive]
 
 %[%+ӄэна%]%<impf%>:%>ӄэна # ;
 
@@ -176,19 +216,29 @@ V-NONFIN ;
 V-IV-NEUT ; 
 !V-IV-PROG ; 
 
-LEXICON V-TV-AFFIX                          !! Verb affixes [transitive]
+LEXICON V-TV-AFFIX                            !! Verb affixes [transitive]
 
 %[%+ӄэна%]%<impf%>:%>ӄэна # ;
+%<aor%>%<a_sg2%>%<o_pl1%>:%>ткугъэ # ;           !! 
+%<aor%>%<a_sg2%>%<o_sg3%>:%>н # ;           !! 
+%<aor%>%<a_sg2%>%<o_sg3%>%<theme%>:%>гъэн # ;           !! 
 %<aor%>%<a_sg2%>%<o_pl3%>:%>нэт # ;           !! 
+
+%<aor%>%<a_pl2%>%<o_sg3%>:%>ткы # ;           !! 
+%<aor%>%<a_pl2%>%<o_pl3%>:%>ткы # ;           !! 
+
 %<aor%>%<a_sg3%>%<o_sg3%>:%>нин # ;           !! [stem]-нин
 %<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт # ;         !! [stem]-нинэт
 
 V-NONFIN ; 
 
-!LEXICON V-INCORP                            !! Cycle for verb incorporation
+!LEXICON V-INCORP                             !! Cycle for verb incorporation
 !
 !%[%→%]%+: Verbs ;
 
+LEXICON V-COP                                !! Copula verb
+
+%<cop%>: V-IV-AFFIX  ; 
 
 LEXICON V-IV                                !! Intransitive verb stems
 
@@ -222,6 +272,7 @@ LEXICON CASES-OBL                            !!
 %<sp%>%<ins%>:%>%{t%}%{E%} # ;
 %<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} # ;
 %<sp%>%<loc%>:%>%{ы%}к # ;
+%<sg%>%<ess%>:%>у # ;
 
 LEXICON CASES-ABL
 
@@ -324,12 +375,15 @@ LEXICON PRON-GYT
 %<prn%>%<pers%>%<p2%>%<sg%>%<equ%>:тыгмил # ;
 %<prn%>%<pers%>%<p2%>%<sg%>%+инэ%<der%>%<subst%>:%>нин N-DERIV-SPACIAL ;
 
-
 LEXICON PRON-YTLJON
 
 %<prn%>%<pers%>%<p3%>%<sg%>%<abs%>:тԓён # ;
 %<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:нык # ;
 %<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ныкагты # ;
+
+LEXICON PRON-RXENUT 
+
+%<prn%>%<itg%>%<sg%>%<abs%>:ъэнут # ; 
 
 LEXICON PRON-YNQEN
 
@@ -354,13 +408,18 @@ LEXICON ADV                                  !! Adverb lexicon
 
 LEXICON Prefixes
 
-%[%+ны%]:ны%>   Verbs ;
-%[%+т%]:т%>     Tense ;
-%[%+мыт%]:мыт%> Tense ;
+%[%+ны%]:ны%>        Verbs ;
+%[%+ӄ%]:ӄ%>          Verbs ;      ! Intentional: Sg2,Pl2
+%[%+н%]:н%{ъ%}%>     Verbs ;      ! Conditional: -
+%[%+м%]:м%{ъ%}%>     Verbs ;      ! Conditional: Sg1
+%[%+мын%]:мын%{ъ%}%> Verbs ;      ! Conditional: Sg2
+%[%+т%]:т%>      Tense ;      ! Aorist, Sg1
+%[%+мыт%]:мыт%>  Tense ;      ! Aorist, Sg2
 Tense ;
 
 LEXICON Tense
-%[%+рэ%]:рэ%>   Verbs ;
+%[%+рэ%]:рэ%>   Verbs ;      ! Future
+!%[%+рэ%]:рэ%>   Nouns ;      ! Future
 Verbs ; 
 
 
@@ -454,6 +513,8 @@ LEXICON Pronouns
 
 ынӄэн:ынӄэн PRON-YNQEN ; 
 
+ръэнут:р PRON-RXENUT ; 
+
 ытръэч:ытръэч PRON ;     ! FIXME: To categorise
 ымыԓьо:ымыԓьо PRON ;     ! FIXME: To categorise
 
@@ -489,6 +550,7 @@ LEXICON Nouns
 рыпын:рыпы N-III-RENMYN ; ! "мездра"
 эйгысӄын:эйгысӄ N-III-RENMYN ; ! "север"
 ӄытан:ӄыта N-III-RENMYN ; ! "место"
+йъилгын:йъилгы N-III-RENMYN ; ! "месяц"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -1137,11 +1199,12 @@ LEXICON Adverbs
 
 LEXICON Verbs 
 
-рагты:рагты V-IV ; ! ""
+ит:ит V-COP ;  
+рагты:рагты V-IV ; ! "ходить домой"
 тыԓя:тыԓя V-IV ; ! ""
 ет:ет V-IV ; ! "прибыть"
 чейвы:чейвы V-IV ; ! "ходить"
-льук:льук V-TV ; ! "видеть"
+ԓьук:ԓьу V-TV ; ! "видеть"
 ивик:ив V-TV ; ! "говорить"
 
 LEXICON Interjections 

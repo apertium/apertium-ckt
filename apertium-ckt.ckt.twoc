@@ -12,13 +12,20 @@ Alphabet
  %<v%>
 
  %[%+рэ%]:0 
- %[%+fut%]:0 
  %[%+мыт%]:0 
+ %[%+мын%]:0 
+ %[%+м%]:0 
+ %[%+ӄ%]:0 
+ %[%+н%]:0 
  %[%+т%]:0 
  %[%+мык%]:0 
  %[%+к%]:0 
  %[%+ны%]:0  
+
  %[%+ӄэна%]:0  
+ %[%+cond%]:0 
+ %[%+fut%]:0 
+ %[%+intn%]:0 
 
  %[→%]:0 ;
 
@@ -53,10 +60,28 @@ Rules
    except
        _ (:*) %[%+fut%]:0 ; 
 
-"Circumfix Aorist рэ-[stem] (block [+fut])"
+"Circumfix Conditional рэ-[stem] (block [+fut])"
 %[%+fut%]:0 /<= _ ; 
    except
        %[%+рэ%]:0 (:*) _ ; 
+
+"Circumfix Conditional н-[stem] (block [+н])"
+Sx:0 /<= _ ;
+       except
+         _ (:*) [ %[%+cond%]:0 | %[%+intn%]:0 ] ; 
+     where Sx in ( %[%+н%] %[%+м%] %[%+мын%] %[%+ӄ%] ) ; 
+
+"Circumfix Conditional н-[stem] (block [+cond])"
+%[%+cond%]:0 /<= _ ; 
+   except
+       [ %[%+н%]:0 | %[%+м%]:0 | %[%+мын%]:0 ] (:*) _ ; 
+
+"Circumfix Intentional н-[stem] (block [+intn])"
+%[%+intn%]:0 /<= _ ; 
+   except
+       [ %[%+н%]:0 | %[%+м%]:0 | %[%+мын%]:0 | %[%+ӄ%]:0 ] (:*) _ ; 
+
+
 
 
 "Circumfix "

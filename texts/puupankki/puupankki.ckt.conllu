@@ -12,3 +12,8 @@
 6	_	рагты	VERB	v	_	5	x	_	рагты|v|iv|incorp
 7	.	.	PUNCT	sent	_	5	punct	_	.|sent
 
+1	-	-	PUNCT	guio	_	3	punct	_	-|guio
+2	Вынэ	вынэ	INTERJ	ij	_	3	discourse	_	вынэ|ij
+3	мынрагтымык	рагты	VERB	v	Mood=Cond|Number[abs]=Plur|Person[abs]=1	0	root	_	рагты|v|iv|cond|spl1
+4	!	!	PUNCT	sent	_	3	punct 	_	!|sent
+
