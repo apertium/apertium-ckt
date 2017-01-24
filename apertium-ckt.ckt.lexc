@@ -8,6 +8,7 @@ Multichar_Symbols
 %<adv%>                   ! Adverb
 %<num%>                   ! Numeral
 %<post%>                  ! Postposition
+%<np%>                    ! Proper name
 %<mod%>                   ! Modal word
 %<prn%>                   ! Pronoun
 %<ij%>                    ! Interjection
@@ -106,16 +107,24 @@ Multichar_Symbols
 %[%+т%]
 %[%+к%]
 %[%+н%]
+%[%+нъ%]
 %[%+ӄ%]
 %[%+м%]
+%[%+мъ%]
 %[%+мыт%]
 %[%+мын%]
 %[%+мык%]
 %[%+рэ%]
 %[%+fut%]
 %[%+cond%]
+%[%+stat%]
 %[%+intn%]
 %[%+ӄэна%]
+
+%[%+sg1%]
+%[%+sg2%]
+%[%+sp3%]
+
 %[→%]
 
 %-
@@ -131,6 +140,7 @@ Multichar_Symbols
 LEXICON Root
 
 Nouns ;
+ProperNouns ;
 Conjunctions ;
 Postpositions ;
 Pronouns ;
@@ -160,6 +170,18 @@ LEXICON K                                   !! Word-final clitics
 LEXICON V-NONFIN 
 
 %<inf%>:%>н # ; 
+%<gna%>:%>ма%{⁺ⱽᴴ%} # ; 
+
+LEXICON V-IV-STAT-HAB
+
+%<s_sg3%>:%>ӄэн # ;
+%<s_pl3%>:%>ӄэнат # ;
+
+
+LEXICON V-TV-STAT-HAB
+
+%<o_sg3%>:%>ӄэн # ;
+%<o_pl3%>:%>ӄэнат # ;
 
 LEXICON V-IV-NEUT-COMMON
 
@@ -192,25 +214,30 @@ LEXICON V-IV-NEUT-FUT
 %<s_sg3%>%<theme%>:%>гъэ # ; 
 %<s_pl3%>:%>ӈыт # ;
 
-LEXICON V-IV-NEUT-INTN-COND
+LEXICON V-IV-NEUT-INTN
 
-%<s_sg3%>:%>н # ;
-%<s_sg3%>%<theme%>:%>гъэн # ; 
-%<s_pl3%>:%>т # ;
-%<s_pl3%>%<theme%>:%>нэт # ;
+%[%+sg1%]%<s_sg1%>:%>к # ;
+%[%+sg1%]%<s_sg1%>%<theme%>:%>гъэк # ; 
+%[%+sg2%]%<s_sg2%>%<theme%>:%>гэ # ; 
+%[%+sp3%]%<s_sg3%>:%>н # ;
+%[%+sp3%]%<s_sg3%>%<theme%>:%>гъэн # ; 
+%[%+sp3%]%<s_pl3%>:%>т # ;
+%[%+sp3%]%<s_pl3%>%<theme%>:%>нэт # ;
 
-V-IV-NEUT-COMMON ;
+!V-IV-NEUT-COMMON ;
 
 LEXICON V-IV-NEUT
 
 %<aor%>: V-IV-NEUT-AOR ;
 %[%+fut%]%<fut%>: V-IV-NEUT-FUT ;
-%[%+cond%]%<cond%>: V-IV-NEUT-INTN-COND ; 
-%[%+intn%]%<intn%>: V-IV-NEUT-INTN-COND ; 
+!%[%+cond%]%<cond%>: V-IV-NEUT-INTN-COND ; 
+%[%+intn%]%<intn%>: V-IV-NEUT-INTN ; 
 
 LEXICON V-IV-AFFIX                            !! Verb affixes [intransitive]
 
-%[%+ӄэна%]%<impf%>:%>ӄэна # ;
+%[%+ӄэна%]%<impf%>:%>ӄэна # ; ! FIXME
+
+%[%+stat%]%<stat%>: V-IV-STAT-HAB ; 
 
 V-NONFIN ; 
 V-IV-NEUT ; 
@@ -229,6 +256,8 @@ LEXICON V-TV-AFFIX                            !! Verb affixes [transitive]
 
 %<aor%>%<a_sg3%>%<o_sg3%>:%>нин # ;           !! [stem]-нин
 %<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт # ;         !! [stem]-нинэт
+
+%[%+stat%]%<stat%>: V-TV-STAT-HAB ; 
 
 V-NONFIN ; 
 
@@ -354,6 +383,9 @@ LEXICON N-UUNX                               !! ??
 %<n%>: CASES-OBL ; 
 %<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н # ;
 
+LEXICON NP-ANT-F 
+
+%<np%>%<ant%>%<f%>%<sg%>%<erg%>:%>нэ # ;
 
 LEXICON PRON-GYM
 
@@ -408,13 +440,15 @@ LEXICON ADV                                  !! Adverb lexicon
 
 LEXICON Prefixes
 
-%[%+ны%]:ны%>        Verbs ;
-%[%+ӄ%]:ӄ%>          Verbs ;      ! Intentional: Sg2,Pl2
-%[%+н%]:н%{ъ%}%>     Verbs ;      ! Conditional: -
-%[%+м%]:м%{ъ%}%>     Verbs ;      ! Conditional: Sg1
-%[%+мын%]:мын%{ъ%}%> Verbs ;      ! Conditional: Sg2
-%[%+т%]:т%>      Tense ;      ! Aorist, Sg1
-%[%+мыт%]:мыт%>  Tense ;      ! Aorist, Sg2
+%[%+ны%]:ны%>             Verbs ;
+%[%+ӄ%]:ӄ%{ы%}%>          Verbs ;      ! Intentional: Sg2,Pl2
+%[%+н%]:н%{ы%}%>          Verbs ;      ! Intentional: Sg3,Pl3
+%[%+нъ%]:н%{ъ%}%>         Verbs ;      ! Conditional: -
+%[%+м%]:м%{ы%}%>          Verbs ;      ! Intentional: Sg1
+%[%+мъ%]:м%{ъ%}%{ы%}%>    Verbs ;      ! Conditional: Sg1
+%[%+мын%]:мын%{ъ%}%>      Verbs ;      ! Conditional: Sg2
+%[%+т%]:т%{ы%}%>          Tense ;      ! Aorist, Sg1
+%[%+мыт%]:мыт%>           Tense ;      ! Aorist, Sg2
 Tense ;
 
 LEXICON Tense
@@ -464,7 +498,12 @@ LEXICON Miscellaneous
 вэԓер:вэԓер  ADV ; ! "1) хоть бы; 2) хватит, достаточно"
 вэԓчиин:вэԓчиин  ADV ; ! "1. всё равно уж; 2. пусть; 3. и всё же"
 вэԓынкыӄун:вэԓынкыӄун  ADV ; ! "спасибо"
+
+ӄээӄын:ӄээӄын  ADV ; ! "ещё"
+ԓымӈэ:ԓымӈэ  ADV ; ! "(2) ещё"
+оʼптыӈ:оʼптыӈ  ADV ; ! "ещё"
 еп:еп  ADV ; ! "1) ещё не 2) пока ещё"
+
 ӄун:ӄун  ADV ; ! "ну"
 ӄырым:ӄырым  ADV ; ! "(2) 1. нет; 2. не "
 ӄырымэн:ӄырымэн  ADV ; ! "(2) не; ӄырымэн микын ничей"
@@ -570,7 +609,9 @@ LEXICON Nouns
 уунъыт:уунъ N-UUNX ; ! "ягоды"
 
 
-!LEXICON ProperNouns 
+LEXICON ProperNouns 
+
+Ӄуты:Ӄуты NP-ANT-F ; ! ""
 
 LEXICON Adjectives 
 
@@ -586,6 +627,8 @@ LEXICON Adverbs
 энмэн:энмэн ADV ; ! ""
 нэмэ:нэмэ ADV ; ! "опять"
 игыр:игыр ADV ; ! "сегодня"
+эргатык:эргатык ADV ; ! "завтра"
+эргатык:эргатык  ADV ; ! "завтра"
 эргатык:эргатык ADV ; ! "завтра"
 айвэ:айвэ ADV ; ! "вчера"
 ԓыгэн:ԓыгэн ADV ; ! "только"
@@ -603,7 +646,6 @@ LEXICON Adverbs
 вытку:вытку ADV ; ! "1) впервые; 2) тоԓько что"
 эʼтки:эʼтки ADV ; ! "пԓохо"
 ӈоонко:ӈоонко ADV ; ! "там (вдаԓи от говорящего)"
-эргатык:эргатык ADV ; ! "завтра"
 игыр:игыр ADV ; ! "1) сегодня; 2) сейчас"
 игыр:игыт ADV ; ! "1) сегодня; 2) сейчас"
 аʼтав:аʼтав ADV ; ! "напрасно"
@@ -866,11 +908,9 @@ LEXICON Adverbs
 кэмэты:кэмэты  ADV ; ! "(2) медленно"
 ӄэраԓгыӈкач:ӄэраԓгыӈкач  ADV ; ! "на западе"
 ӄэргэты:ӄэргэты  ADV ; ! "светло"
-ӄээӄын:ӄээӄын  ADV ; ! "ещё"
 ԓеӈытэӄ:ԓеӈытэӄ  ADV ; ! " 1) значит, видимо; 2) неужели"
 ԓыги:ԓыги  ADV ; ! "известно"
 ԓыгэнитык:ԓыгэнитык  ADV ; ! "напрасно, просто так (делать что-л.)"
-ԓымӈэ:ԓымӈэ  ADV ; ! "(2) ещё"
 ԓымынкы:ԓымынкы  ADV ; ! "повсюду"
 ԓыӈырит:ԓыӈырит  ADV ; ! "обычно"
 ԓьогты:ԓьогты  ADV ; ! "заметно"
@@ -1038,7 +1078,6 @@ LEXICON Adverbs
 онмычыкойпы:онмычыкойпы  ADV ; ! "изнутри"
 онмэты:онмэты  ADV ; ! "вглубь"
 онтымэты:онтымэты  ADV ; ! "1) спокойно; 2) сытно"
-оʼптыӈ:оʼптыӈ  ADV ; ! "ещё"
 оʼптытъар:оʼптытъар  ADV ; ! "несколько"
 оʼптыяа:оʼптыяа  ADV ; ! "сравнительно далеко"
 оʼптэвыча:оʼптэвыча  ADV ; ! "гораздо ниже "
@@ -1055,6 +1094,7 @@ LEXICON Adverbs
 пытӄыԓым:пытӄыԓым  ADV ; ! "особенно"
 пытԓяӄ:пытԓяӄ  ADV ; ! "1) просто так; 2) нарочно"
 пэнинэмиԓ:пэнинэмиԓ  ADV ; ! "по-прежнему"
+панэна:панэна ADV ; ! "всё ещё"
 пэтгакы:пэтгакы  ADV ; ! "прямо (о направлении)"
 пэтԓе:пэтԓе  ADV ; ! "скоро, вскоре"
 пэчгэты:пэчгэты  ADV ; ! "(2) жадно"
@@ -1180,7 +1220,6 @@ LEXICON Adverbs
 эмтэгъеӈэ:эмтэгъеӈэ  ADV ; ! "добровольно, из-за желания"
 эʼнӄэтэ:эʼнӄэтэ  ADV ; ! "нехотя"
 эʼӈъыттъыёча:эʼӈъыттъыёча  ADV ; ! "наперерез"
-эргатык:эргатык  ADV ; ! "завтра"
 этаны:этаны  ADV ; ! "наверное"
 этчеты:этчеты  ADV ; ! "тяжело"
 этъоӄайыӄын:этъоӄайыӄын  ADV ; ! "немного погодя"
@@ -1202,10 +1241,14 @@ LEXICON Verbs
 ит:ит V-COP ;  
 рагты:рагты V-IV ; ! "ходить домой"
 тыԓя:тыԓя V-IV ; ! ""
+пԓытку:пԓытку V-IV ; ! ""
 ет:ет V-IV ; ! "прибыть"
 чейвы:чейвы V-IV ; ! "ходить"
 ԓьук:ԓьу V-TV ; ! "видеть"
 ивик:ив V-TV ; ! "говорить"
+рук:рук V-TV ; ! "кушать"
+ёаʼт:ёаʼт V-IV ; ! ""
+ёоʼ:ёоʼ V-TV ; ! ""
 
 LEXICON Interjections 
 

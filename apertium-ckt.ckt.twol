@@ -76,8 +76,18 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
         except 
                                         _ [ %{·%}: | %{°%}: ]  ; 
         where 
-            Vx in ( у э ) 
-            Vy in ( о а ) matched ;
+            Vx in ( у ) 
+            Vy in ( о ) matched ;
+
+"Vowel harmony for non-archiphonemic vowels (э dominant)"
+Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ; 
+                                        _ :* [ %{⁺ⱽᴴ%}: ] ; 
+        except 
+                                        _ [ %{·%}: | %{°%}: ]  ; 
+        where 
+            Vx in ( э е ) 
+            Vy in ( а а ) matched ;
+
 
 
 "Vowel coronal singulative allomorph with -г"
@@ -104,6 +114,7 @@ Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ;
                                              _ :Cns (:0) %{·%}: ;
                                 %{J%}: :0 :п _ ;
                                 .#. :н _ %>: ;
+                                .#. :Cns (:Glottal) _ %>: :Cns ; 
          except
                              :Vow %>: %{J%}: _ ;
                              :Vow %>: _ :к ;
