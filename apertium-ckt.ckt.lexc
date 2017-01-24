@@ -97,6 +97,7 @@ Multichar_Symbols
 %{e%}                     ! э or г
 %{J%}                     ! й or э or г
 %{ъ%}                     ! Glottal stop
+%{т%}                     ! 
 
 %{⁺ⱽᴴ%}                   ! Trigger for dominant harmony
 %{·%}                     ! Trigger for stem-final vowel deletion
@@ -197,7 +198,7 @@ LEXICON V-IV-NEUT-AOR
 %<s_sg3%>:%>э # ;
 %<s_sg3%>%<theme%>:%>гъэ # ; 
 %<s_pl3%>:%>т # ;
-%<s_pl3%>%<theme%>:%>гъэт # ;
+%<s_pl3%>%<theme%>:%>гъэт # ; ! Maybe -гъIт because e.g. эквэтгъи
 
 V-IV-NEUT-COMMON ;
 
@@ -1249,6 +1250,7 @@ LEXICON Verbs
 рук:рук V-TV ; ! "кушать"
 ёаʼт:ёаʼт V-IV ; ! ""
 ёоʼ:ёоʼ V-TV ; ! ""
+ва:%{т%}ва V-IV ; ! ""
 
 LEXICON Interjections 
 
