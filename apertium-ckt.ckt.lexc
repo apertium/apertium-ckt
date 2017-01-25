@@ -94,6 +94,7 @@ Multichar_Symbols
 %{E%}                     ! а or э
 %{ы%}                     ! Epenthetic schwa: ы or 0
 %{к%}
+%{и%}                     ! For plural: и or 0
 %{e%}                     ! э or г
 %{J%}                     ! й or э or г
 %{ъ%}                     ! Glottal stop
@@ -113,16 +114,20 @@ Multichar_Symbols
 %[%+м%]
 %[%+мъ%]
 %[%+мыт%]
+%[%+нэ%]
 %[%+мын%]
+%[%+мынъ%]
 %[%+мык%]
 %[%+рэ%]
+%[%+ӄэна%]
 %[%+fut%]
+%[%+inv%]
 %[%+cond%]
 %[%+stat%]
 %[%+intn%]
-%[%+ӄэна%]
 
 %[%+sg1%]
+%[%+pl1%]
 %[%+sg2%]
 %[%+sp3%]
 
@@ -196,9 +201,11 @@ LEXICON V-IV-NEUT-COMMON
 LEXICON V-IV-NEUT-AOR
 
 %<s_sg3%>:%>э # ;
-%<s_sg3%>%<theme%>:%>гъэ # ; 
+%<s_sg3%>%<theme%>:%>гъэ # ;  ! -гъэ, -гъи
 %<s_pl3%>:%>т # ;
-%<s_pl3%>%<theme%>:%>гъэт # ; ! Maybe -гъIт because e.g. эквэтгъи
+%<s_pl3%>%<theme%>:%>гъэт # ; ! -гъат, -гъэ
+
+
 
 V-IV-NEUT-COMMON ;
 
@@ -224,6 +231,7 @@ LEXICON V-IV-NEUT-INTN
 %[%+sp3%]%<s_sg3%>%<theme%>:%>гъэн # ; 
 %[%+sp3%]%<s_pl3%>:%>т # ;
 %[%+sp3%]%<s_pl3%>%<theme%>:%>нэт # ;
+%[%+pl1%]%<s_pl1%>:%>мык # ;
 
 !V-IV-NEUT-COMMON ;
 
@@ -244,6 +252,15 @@ V-NONFIN ;
 V-IV-NEUT ; 
 !V-IV-PROG ; 
 
+LEXICON V-INV-AGENT-PL3
+
+%[%+inv%]%<aor%>%<a_pl3%>%<o_sg1%>%<inv%>:%>гым # ; 
+%[%+inv%]%<aor%>%<a_pl3%>%<o_pl1%>%<inv%>:%>мык # ; 
+%[%+inv%]%<aor%>%<a_pl3%>%<o_sg2%>%<inv%>:%>гыт # ; 
+%[%+inv%]%<aor%>%<a_pl3%>%<o_pl2%>%<inv%>:%>тык # ; 
+%[%+inv%]%<aor%>%<a_pl3%>%<o_sg3%>%<inv%>:%>н # ; 
+%[%+inv%]%<aor%>%<a_pl3%>%<o_pl3%>%<inv%>:%>нэт # ; 
+
 LEXICON V-TV-AFFIX                            !! Verb affixes [transitive]
 
 %[%+ӄэна%]%<impf%>:%>ӄэна # ;
@@ -257,6 +274,8 @@ LEXICON V-TV-AFFIX                            !! Verb affixes [transitive]
 
 %<aor%>%<a_sg3%>%<o_sg3%>:%>нин # ;           !! [stem]-нин
 %<aor%>%<a_sg3%>%<o_pl3%>:%>нинэт # ;         !! [stem]-нинэт
+
+V-INV-AGENT-PL3 ;
 
 %[%+stat%]%<stat%>: V-TV-STAT-HAB ; 
 
@@ -279,9 +298,9 @@ LEXICON V-TV                                !! Transitive verb stems
 
 %<v%>%<tv%>: V-TV-AFFIX ;
 
-!LEXICON N-COMPOUND                          !! Cycle for nominal compounding
-!
-!%<cmp%>%+:%→ Nouns ;
+LEXICON N-COMPOUND                          !! Cycle for nominal compounding
+
+%<cmp%>%+:%→ Nouns ;
 
 LEXICON N-DERIV-SPACIAL
 
@@ -311,10 +330,11 @@ LEXICON CASES-ABL
 LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
 
 %<n%>%<sg%>%<abs%>: # ;
-%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т%{и%} # ;
 %<n%>: CASES-OBL ; 
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
+%<n%>: N-COMPOUND ; 
 
 LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced final vowel
 
@@ -323,6 +343,7 @@ LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced fin
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
+%<n%>: N-COMPOUND ; 
 
 LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted final vowel
 
@@ -331,6 +352,7 @@ LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted fin
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
+%<n%>: N-COMPOUND ; 
 
 LEXICON N-IIa-VYT-ABS                        !! Class IIa: Total reduplication 
 
@@ -353,6 +375,7 @@ LEXICON N-IIb-TANNGYTAN                      !! Class IIb: Partial reduplication
 %<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
 %<n%>: CASES-OBL ; 
 %<n%>: N-DERIV ; 
+%<n%>: N-COMPOUND ; 
   
 LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 
@@ -361,6 +384,7 @@ LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
+%<n%>: N-COMPOUND ; 
 
 LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
 
@@ -375,6 +399,7 @@ LEXICON N-IV-QORA-OBL                        !! Class IV: Suffix -ӈы [irreg. s
 LEXICON N-IV-TITI                            !! Class IV: Suffix -ӈы
 
 %<n%>%<sg%>%<abs%>:%>ӈы # ;
+%<n%>%<pl%>%<abs%>:%>т # ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -414,13 +439,30 @@ LEXICON PRON-YTLJON
 %<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:нык # ;
 %<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ныкагты # ;
 
+LEXICON PRON-RXENUT-COMMON
+
+%<sg%>%<abs%>:ъэнут # ; 
+%<sg%>%<erg%>:эӄэ # ; 
+
 LEXICON PRON-RXENUT 
 
-%<prn%>%<itg%>%<sg%>%<abs%>:ъэнут # ; 
+%<prn%>%<itg%>: PRON-RXENUT-COMMON ;
+
+LEXICON PRON-IMYRXENUT 
+
+%<prn%>%<ind%>: PRON-RXENUT-COMMON ; 
 
 LEXICON PRON-YNQEN
 
 %<prn%>%<dem%>%<sg%>%<abs%>: # ; 
+
+LEXICON PRON-QOL-SG
+
+%<prn%>%<ind%>%<sg%>%<abs%>: K ; 
+
+LEXICON PRON-QOL ! p.173 Inenlikei
+
+%<prn%>%<ind%>%<pl%>%<abs%>: K ;
 
 LEXICON PRON                                 !! Generic pronoun [to be categorised]
 
@@ -443,13 +485,15 @@ LEXICON Prefixes
 
 %[%+ны%]:ны%>             Verbs ;
 %[%+ӄ%]:ӄ%{ы%}%>          Verbs ;      ! Intentional: Sg2,Pl2
+%[%+мын%]:мын%>           Verbs ;      ! Intentional: Pl1
 %[%+н%]:н%{ы%}%>          Verbs ;      ! Intentional: Sg3,Pl3
 %[%+нъ%]:н%{ъ%}%>         Verbs ;      ! Conditional: -
 %[%+м%]:м%{ы%}%>          Verbs ;      ! Intentional: Sg1
 %[%+мъ%]:м%{ъ%}%{ы%}%>    Verbs ;      ! Conditional: Sg1
-%[%+мын%]:мын%{ъ%}%>      Verbs ;      ! Conditional: Sg2
+%[%+мынъ%]:мын%{ъ%}%>     Verbs ;      ! Conditional: Sg2
 %[%+т%]:т%{ы%}%>          Tense ;      ! Aorist, Sg1
 %[%+мыт%]:мыт%>           Tense ;      ! Aorist, Sg2
+%[%+нэ%]:нэ%>             Tense ;      ! Inverse marker
 Tense ;
 
 LEXICON Tense
@@ -548,15 +592,20 @@ LEXICON Postpositions
 LEXICON Pronouns 
 
 гым:гым PRON-GYM ; 
-гыт:гыт PRON-GYT ; 
+гыт:гы PRON-GYT ; 
+гыт:гыы PRON-GYT ;  ! Dir/LR
 ытԓён:ы PRON-YTLJON ; 
 
 ынӄэн:ынӄэн PRON-YNQEN ; 
 
 ръэнут:р PRON-RXENUT ; 
 
-ытръэч:ытръэч PRON ;     ! FIXME: To categorise
+имыръэнут:имыр PRON-IMYRXENUT ; 
+
 ымыԓьо:ымыԓьо PRON ;     ! FIXME: To categorise
+
+ӄоԓ:ӄоԓ PRON-QOL-SG ;
+ӄоԓ:ӄутти PRON-QOL ;
 
 LEXICON Numerals 
 
@@ -569,6 +618,7 @@ LEXICON Nouns
 ӈэԓвыԓ:ӈэԓвыԓ N-Ia-AJMAK ; ! "табун"
 ӈинӄэй:ӈинӄэй N-Ia-AJMAK ; ! "мальчик"
 тумгытум:тумгытум N-Ia-AJMAK ; ! "товарищ"
+тэйӈэт:тэйӈэт N-Ia-AJMAK ; ! "пища"
 
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
@@ -591,6 +641,8 @@ LEXICON Nouns
 эйгысӄын:эйгысӄ N-III-RENMYN ; ! "север"
 ӄытан:ӄыта N-III-RENMYN ; ! "место"
 йъилгын:йъилгы N-III-RENMYN ; ! "месяц"
+рэмкыԓьын:рэмкыԓьы N-III-RENMYN ; ! "гость"
+нутэсӄын:нутэсӄы N-III-RENMYN ; ! "земля"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -1251,6 +1303,7 @@ LEXICON Verbs
 ёаʼт:ёаʼт V-IV ; ! ""
 ёоʼ:ёоʼ V-TV ; ! ""
 ва:%{т%}ва V-IV ; ! ""
+ӄамэтва:ӄамэтва V-IV ; ! "кушать"
 
 LEXICON Interjections 
 

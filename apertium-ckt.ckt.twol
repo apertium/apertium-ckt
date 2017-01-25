@@ -7,6 +7,7 @@ Alphabet
  %{т%}:т %{т%}:0
  %{E%}:э %{t%}:а 
  %{N%}:ӈ %{N%}:г
+ %{и%}:и %{и%}:0
 
  %{к%}:к %{к%}:г 
  %{e%}:э %{e%}:г
@@ -103,11 +104,11 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
           [ :Vow | :Cns - :Coronal ] %>: %{ы%}: л (:0) _ ; 
 
 "Allative suffix allomorphy"
-%{J%}:й <=> :Vow %>: _ ;
+%{J%}:й <=> :Vow %>: _ %{ы%}: ;
 
-"Allative suffix allomorphy"
-%{ы%}:0 <=> :Vow %>: %{J%}: _ ;
-            :Vow %>: _ :к ;        ! Locative
+"Allative suffix allomorphy II"
+%{ы%}:0 <=>   :Vow %>: %{J%}: _ ;
+                   :Vow %>: _ :к ;        ! Locative
 
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
@@ -141,3 +142,8 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
 
 "{т} alternation in -тва-" 
 %{т%}:0 <=> .#. _  ; 
+
+"{и} after coronals"
+%{и%}:0 <=> :Coronal %>: %{ы%}: т _ ; 
+
+! т:т э:э й:й ӈ:ӈ э:э т:т >:0 {ы}:0 т:т {и}:0 
