@@ -128,6 +128,7 @@ Multichar_Symbols
 
 %[%+sg1%]
 %[%+pl1%]
+%[%+pl2%]
 %[%+sg2%]
 %[%+sp3%]
 
@@ -145,6 +146,7 @@ Multichar_Symbols
 
 LEXICON Root
 
+!Temp ;
 Nouns ;
 ProperNouns ;
 Conjunctions ;
@@ -205,9 +207,17 @@ LEXICON V-IV-NEUT-AOR
 %<s_pl3%>:%>т # ;
 %<s_pl3%>%<theme%>:%>гъэт # ; ! -гъат, -гъэ
 
-
-
 V-IV-NEUT-COMMON ;
+
+! FIXME: ^мыӄамэтваркын/ӄамэтва<v><iv><prog><aor><s_sg1>/ӄамэтва<v><iv><prog><aor><s_sg3>/ӄамэтва<v><iv><prog><aor><s_sg2>$
+LEXICON V-IV-PROG-AOR
+
+%[%+sg1%]%<s_sg1%>:%>ркын # ;
+%<s_sg2%>:%>ркын # ;
+%<s_sg3%>:%>ркын # ;
+%[%+pl1%]%<s_pl1%>:%>ркын # ;
+%<s_pl2%>:%>ркынэ%>тык # ;
+%<s_pl3%>:%>ркыт # ;
 
 LEXICON V-IV-NEUT-FUT
 
@@ -229,9 +239,10 @@ LEXICON V-IV-NEUT-INTN
 %[%+sg2%]%<s_sg2%>%<theme%>:%>гэ # ; 
 %[%+sp3%]%<s_sg3%>:%>н # ;
 %[%+sp3%]%<s_sg3%>%<theme%>:%>гъэн # ; 
+%[%+pl1%]%<s_pl1%>:%>мык # ;
+%[%+pl2%]%<s_pl2%>:%>тык # ;
 %[%+sp3%]%<s_pl3%>:%>т # ;
 %[%+sp3%]%<s_pl3%>%<theme%>:%>нэт # ;
-%[%+pl1%]%<s_pl1%>:%>мык # ;
 
 !V-IV-NEUT-COMMON ;
 
@@ -242,15 +253,24 @@ LEXICON V-IV-NEUT
 !%[%+cond%]%<cond%>: V-IV-NEUT-INTN-COND ; 
 %[%+intn%]%<intn%>: V-IV-NEUT-INTN ; 
 
+LEXICON V-IV-PROG
+
+%<aor%>: V-IV-PROG-AOR ;
+!%[%+fut%]%<fut%>: V-IV-PROG-FUT ;
+!%[%+cond%]%<cond%>: V-IV-PROG-INTN-COND ; 
+!%[%+intn%]%<intn%>: V-IV-PROG-INTN ; 
+
 LEXICON V-IV-AFFIX                            !! Verb affixes [intransitive]
 
 %[%+ӄэна%]%<impf%>:%>ӄэна # ; ! FIXME
 
 %[%+stat%]%<stat%>: V-IV-STAT-HAB ; 
 
+%<neut%>: V-IV-NEUT ; 
+%<prog%>: V-IV-PROG ; 
+
 V-NONFIN ; 
-V-IV-NEUT ; 
-!V-IV-PROG ; 
+
 
 LEXICON V-INV-AGENT-PL3
 
@@ -1305,6 +1325,19 @@ LEXICON Verbs
 ва:%{т%}ва V-IV ; ! ""
 ӄамэтва:ӄамэтва V-IV ; ! "кушать"
 
+авэръэпык:авэръэпы V-IV ; ! "одеваться (о человеке)"
+арычгытвак:арычгытва V-IV ; ! " лежать на боку
+вакъок:вакъо V-IV ; ! " садиться
+вэтчак:вэтча V-IV ; ! " встать 
+очык:очы V-IV ; ! " 1) откликнуться, ответить; 2) поддакивать
+очыткок:очытко V-TV ; ! " поддакивать, отвечать
+паак:паа V-TV ; ! " прекращать, переставать (что-л. делать)
+пирик:пири V-TV ; ! " 1) взять; 2) завоевать приз
+рагтык:рагты V-IV ; ! " возвращаться домой, приходить в свой дом
+так:та V-IV ; ! " I 1) проезжать; 2) проходить
+эвык:эвы V-IV ; ! " продырявливаться
+
+
 LEXICON Interjections 
 
 ии:ии INTERJ ; ! "да!"
@@ -1366,4 +1399,5 @@ LEXICON Punctuation
 
 ! Temporary numeral lexicon
 <[%0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9]+>  DIGITLEX ; ! Use/Circ
+
 
