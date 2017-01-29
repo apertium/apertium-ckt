@@ -76,3 +76,14 @@
 "<:>"
 	":" sent @punct #4->3
 
+# ckt.crp.txt:2181
+"<Риӄукэтэ>"
+	"риӄукэт" n sp erg @nsubj #1->2
+"<ивнин>"
+	"ивик" v tv aor a_sg3 o_sg3 @root #2->0
+"<кэйӈын>"
+	"кэйӈын" n sg abs @obj #3->2
+"<:>"
+	":" sent @punct #4->2
+
+

@@ -198,8 +198,8 @@ LEXICON V-IV-NEUT-COMMON
 %[%+к%]%<s_sg1%>:%>к # ;
 %[%+к%]%<s_sg1%>%<theme%>:%>гъэк # ;
 %[%+мык%]%<s_pl1%>:%>мык # ;
-%<s_sg2%>:%>э # ;
-%<s_sg2%>%<theme%>:%>гъэ # ; 
+%<s_sg2%>:%>и # ;
+%<s_sg2%>%<theme%>:%>гъи # ; 
 %<s_pl2%>:%>тык # ;
 
 LEXICON V-IV-NEUT-AOR
@@ -315,6 +315,9 @@ LEXICON V-IV-DER
 
 %<dur%>:%>ԓьэт V-IV-AFFIX ; 
 %<inch%>:%>ӈӈо V-IV-AFFIX ; 
+%<resu%>:%>тва V-IV-AFFIX ; 
+%<iter%>:%>тку V-IV-AFFIX ; 
+%<inch2%>:%>мго V-IV-AFFIX ; 
 
 V-IV-AFFIX ;
 
@@ -337,11 +340,11 @@ LEXICON N-COMPOUND                          !! Cycle for nominal compounding
 
 LEXICON N-DERIV-SPACIAL
 
-%<sg%>%<abs%>: # ;
-%<pl%>%<abs%>:%>т # ;
-%<sp%>%<ins%>:%>%{t%}%{E%} # ;
-%<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} # ;
-%<sp%>%<abl%>:%>%{J%}%{ы%}п%{ы%}%{⁺ⱽᴴ%} # ;
+%<sg%>%<abs%>: K ;
+%<pl%>%<abs%>:%>т K ;
+%<sp%>%<ins%>:%>%{t%}%{E%} K ;
+%<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} K ;
+%<sp%>%<abl%>:%>%{J%}%{ы%}п%{ы%}%{⁺ⱽᴴ%} K ;
 
 LEXICON N-DERIV
 
@@ -362,8 +365,8 @@ LEXICON CASES-ABL
 
 LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
 
-%<n%>%<sg%>%<abs%>: # ;
-%<n%>%<pl%>%<abs%>:%>%{ы%}т%{и%} # ;
+%<n%>%<sg%>%<abs%>: K ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т%{и%} K ;
 %<n%>: CASES-OBL ; 
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -371,8 +374,8 @@ LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
 
 LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced final vowel
 
-%<n%>%<sg%>%<abs%>:%{°%} # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
+%<n%>%<sg%>%<abs%>:%{°%} K ;
+%<n%>%<pl%>%<abs%>:%>т K ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -380,8 +383,8 @@ LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced fin
 
 LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted final vowel
 
-%<n%>%<sg%>%<abs%>:%{·%} # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
+%<n%>%<sg%>%<abs%>:%{·%} K ;
+%<n%>%<pl%>%<abs%>:%>т K ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -389,8 +392,8 @@ LEXICON N-Ic-EKYK                            !! Class Ic: Bare stem, deleted fin
 
 LEXICON N-IIa-VYT-ABS                        !! Class IIa: Total reduplication 
 
-%<n%>%<sg%>%<abs%>: # ;
-%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
+%<n%>%<sg%>%<abs%>: K ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т K ;
 %<n%>: CASES-ABL ; 
 
 LEXICON N-IIa-VYT-OBL                        !! Class IIa: Total reduplication
@@ -400,20 +403,20 @@ LEXICON N-IIa-VYT-OBL                        !! Class IIa: Total reduplication
 
 LEXICON N-IIb-TANNGYTAN-SG-ABS               !! Class IIb: Partial reduplication 
 
-%<n%>%<sg%>%<abs%>: # ;
+%<n%>%<sg%>%<abs%>: K ;
 %<n%>: CASES-ABL ; 
 
 LEXICON N-IIb-TANNGYTAN                      !! Class IIb: Partial reduplication
 
-%<n%>%<pl%>%<abs%>:%>%{ы%}т # ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т K ;
 %<n%>: CASES-OBL ; 
 %<n%>: N-DERIV ; 
 %<n%>: N-COMPOUND ; 
   
 LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 
-%<n%>%<sg%>%<abs%>:н # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
+%<n%>%<sg%>%<abs%>:н K ;
+%<n%>%<pl%>%<abs%>:%>т K ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -421,7 +424,7 @@ LEXICON N-III-RENMYN                         !! Class III: Suffix -н
 
 LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
 
-%<n%>%<sg%>%<abs%>:%>ӈы # ;
+%<n%>%<sg%>%<abs%>:%>ӈы K ;
 %<n%>: CASES-ABL ; 
 
 LEXICON N-IV-QORA-OBL                        !! Class IV: Suffix -ӈы [irreg. stem]
@@ -431,8 +434,8 @@ LEXICON N-IV-QORA-OBL                        !! Class IV: Suffix -ӈы [irreg. s
  
 LEXICON N-IV-TITI                            !! Class IV: Suffix -ӈы
 
-%<n%>%<sg%>%<abs%>:%>ӈы # ;
-%<n%>%<pl%>%<abs%>:%>т # ;
+%<n%>%<sg%>%<abs%>:%>ӈы K ;
+%<n%>%<pl%>%<abs%>:%>т K ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
@@ -440,42 +443,43 @@ LEXICON N-IV-TITI                            !! Class IV: Suffix -ӈы
 LEXICON N-UUNX                               !! ??
 
 %<n%>: CASES-OBL ; 
-%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}л%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н # ;
+%<n%>%<pl%>%<abs%>:%>т K ; 
+%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}ԓ%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н K ;
 
 LEXICON NP-ANT-F 
 
-%<np%>%<ant%>%<f%>%<sg%>%<erg%>:%>нэ # ;
+%<np%>%<ant%>%<f%>%<sg%>%<erg%>:%>нэ K ;
 
 LEXICON PRON-GYM
 
-%<prn%>%<pers%>%<p1%>%<sg%>%<abs%>: # ;
-%<prn%>%<pers%>%<p1%>%<sg%>%<erg%>:нан # ;
-%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:ык # ;
-%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:ыкы # ;
-%<prn%>%<pers%>%<p1%>%<sg%>%<all%>:ыкагты # ;
-%<prn%>%<pers%>%<p1%>%<sg%>%<equ%>:ыгмил # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<abs%>: K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<erg%>:нан K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:ык K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:ыкы K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<all%>:ыкагты K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<equ%>:ыгмил K ;
 %<prn%>%<pers%>%<p1%>%<sg%>%+инэ%<der%>%<subst%>:%>нин N-DERIV-SPACIAL ;
 
 LEXICON PRON-GYT
 
-%<prn%>%<pers%>%<p2%>%<sg%>%<abs%>:т # ;
-%<prn%>%<pers%>%<p2%>%<sg%>%<erg%>:тнан # ;
-%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:тык # ;
-%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:тыкы # ;
-%<prn%>%<pers%>%<p2%>%<sg%>%<all%>:тыкагты # ;
-%<prn%>%<pers%>%<p2%>%<sg%>%<equ%>:тыгмил # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<abs%>:т K ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<erg%>:тнан K ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:тык K ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:тыкы K ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<all%>:тыкагты K ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<equ%>:тыгмил K ;
 %<prn%>%<pers%>%<p2%>%<sg%>%+инэ%<der%>%<subst%>:%>нин N-DERIV-SPACIAL ;
 
 LEXICON PRON-YTLJON
 
-%<prn%>%<pers%>%<p3%>%<sg%>%<abs%>:тԓён # ;
-%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:нык # ;
-%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ныкагты # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abs%>:тԓён K ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:нык K ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ныкагты K ;
 
 LEXICON PRON-RXENUT-COMMON
 
-%<sg%>%<abs%>:ъэнут # ; 
-%<sg%>%<erg%>:эӄэ # ; 
+%<sg%>%<abs%>:ъэнут K ; 
+%<sg%>%<erg%>:эӄэ K ; 
 
 LEXICON PRON-RXENUT 
 
@@ -487,7 +491,7 @@ LEXICON PRON-IMYRXENUT
 
 LEXICON PRON-YNQEN
 
-%<prn%>%<dem%>%<sg%>%<abs%>: # ; 
+%<prn%>%<dem%>%<sg%>%<abs%>: K ; 
 
 LEXICON PRON-QOL-SG
 
@@ -497,9 +501,13 @@ LEXICON PRON-QOL ! p.173 Inenlikei
 
 %<prn%>%<ind%>%<pl%>%<abs%>: K ;
 
+LEXICON PRON-CINIT
+
+%<prn%>%<ref%>: K ;
+
 LEXICON PRON                                 !! Generic pronoun [to be categorised]
 
-%<prn%>: # ;
+%<prn%>: K ;
 
 LEXICON NUM                                  !! Numeral lexicon
 
@@ -612,6 +620,7 @@ LEXICON Miscellaneous
 
 ымы:ымы ADV ; ! "и, тоже"
 нэмыӄэй:нэмыӄэй ADV ; ! "тоже"
+ытръэч:ытръэч ADV ; ! "только"
 
 
 LEXICON Conjunctions 
@@ -646,6 +655,8 @@ LEXICON Pronouns
 ӄоԓ:ӄоԓ PRON-QOL-SG ;
 ӄоԓ:ӄутти PRON-QOL ;
 
+чинит:чинит PRON-CINIT ; ! "сам"
+
 LEXICON Numerals 
 
 ӈирэӄ:ӈирэӄ NUM ; ! "два"
@@ -662,6 +673,7 @@ LEXICON Nouns
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
 иʼны:иʼны N-Ib-ANGKY ; ! "волк"
+вопӄа:вопӄа N-Ib-ANGKY ; ! ""
 
 экык:эк%{ы%}кэ N-Ic-EKYK ; ! "сын"
 ӈээкык:ӈээк%{ы%}кэ N-Ic-EKYK ; ! "дочь"
@@ -683,6 +695,7 @@ LEXICON Nouns
 йъилгын:йъилгы N-III-RENMYN ; ! "месяц"
 рэмкыԓьын:рэмкыԓьы N-III-RENMYN ; ! "гость"
 нутэсӄын:нутэсӄы N-III-RENMYN ; ! "земля"
+кэйӈын:кэйӈы N-III-RENMYN ; ! "медвед"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -700,6 +713,7 @@ LEXICON Nouns
 !аӈар:аӈар N-IV-TITI ; ! "звезда"
 
 уунъыт:уунъ N-UUNX ; ! "ягоды"
+риӄукэт:риӄукэ N-UUNX ; ! "песцы"
 
 
 LEXICON ProperNouns 
@@ -717,6 +731,7 @@ LEXICON AdjStems
 ԓгы:ԓгы A ;  ! "белый, чистый"
 мэйӈ:мэйӈ A ; ! "большой"
 эʼӄэ:эʼӄэ A ; ! "плохой"
+!эгъюԓеткыԓь:эгъюԓеткыԓь 
 
 LEXICON Adverbs
 
@@ -1352,6 +1367,9 @@ LEXICON Verbs
 ӄоранмык:ӄоранм V-IV ; ! "убивать олень"
 энапэԓятык:энапэԓяты V-TV ; ! "оставлять"
 пыкирык:пыкир V-IV ; ! "прибыть"
+чимгъук:чимгъу V-TV ; ! "думать"
+эквэт:эквэт V-IV ; ! "уйти"
+камаграк:камагра V-IV ; ! "шевелиться"
 
 авэръэпык:авэръэпы V-IV ; ! "одеваться"
 арычгытвак:арычгытва V-IV ; ! "лежать на боку"

@@ -8,12 +8,38 @@
 3	ӈирэӄ	ӈирэӄ	NUM	num	_	4	nummod	_	ӈирэӄ|num
 4	о'равэтԓьат	о'равэтԓьа	NOUN	n	Case=Abs|Number=Plur	5	nsubj	_	о'равэтԓьа|n|pl|abs
 5-6	нырагтытыԓяӄэнат	_	_	_	_	_	_	_	_
-5	_	тыԓя	VERB	v	Number[abs]=Plur|Person[abs]=3	0	root	_	тыԓя|v|iv|impf|spl3
-6	_	рагты	VERB	v	_	5	x	_	рагты|v|iv|incorp
+5	тыԓя	тыԓя	VERB	v	Number[abs]=Plur|Person[abs]=3	0	root	_	тыԓя|v|iv|impf|spl3
+6	рагты	рагты	VERB	v	_	5	x	_	рагты|v|iv|incorp
 7	.	.	PUNCT	sent	_	5	punct	_	.|sent
+
+1	Ӄутынэ	Ӄуты	_	np	Case=Erg|Number=Sing	2	nsubj	_	Ӄуты|np|ant|f|sg|erg
+2	ивнин	ивик	VERB	v	Number[erg]=Sing|Person[erg]=3	0	root	_	ивик|v|tv|aor|asg3|osg3
+3	тумгытум	тумгытум	NOUN	n	Case=Abs|Number=Sing	2	obj	_	тумгытум|n|sg|abs
+4	:	:	PUNCT	sent	_	2	punct	_	:|sent
+
+1	Аʼмын	аʼмын	INTERJ	ij	_	3	discourse	_	аʼмын|ij
+2	-ым	ым	_	mod	_	3	discourse	_	ым|mod
+3	еттык	ет	VERB	v	Number[abs]=Plur|Person[abs]=2	0	root	_	ет|v|iv|aor|spl2
+4	!	!	PUNCT	sent	_	3	punct	_	!|sent
 
 1	-	-	PUNCT	guio	_	3	punct	_	-|guio
 2	Вынэ	вынэ	INTERJ	ij	_	3	discourse	_	вынэ|ij
-3	мынрагтымык	рагты	VERB	v	Mood=Cond|Number[abs]=Plur|Person[abs]=1	0	root	_	рагты|v|iv|cond|spl1
+3	мынрагтымык	рагты	VERB	v	Number[abs]=Plur|Person[abs]=1	0	root	_	рагты|v|iv|intn|spl1
 4	!	!	PUNCT	sent	_	3	punct 	_	!|sent
+
+1	-	-	PUNCT	guio	_	4	punct	_	-|guio
+2	Ытԓён	ытԓён	ADV	adv	_	4	discourse	_	ытԓён|adv
+3	ръэнут	ръэнут	_	prn	Case=Abs|Number=Sing	4	obj	_	ръэнут|prn|itg|sg|abs
+4	ԓьуткы	ԓьук	VERB	v	_	0	root	_	ԓьук|v|tv|aor|apl2|osg3
+5	?	?	PUNCT	sent	_	4	punct	_	?|sent
+
+1	Пԓыткома	пԓытку	VERB	v	_	3	advcl	_	пԓытку|v|iv|gna
+2	ытръэч	ытръэч	ADV	adv	_	3	advmod	_	ытръэч|adv
+3	ивнинэт	ивик	VERB	v	Number[erg]=Sing|Person[erg]=3	0	root	_	ивик|v|tv|aor|asg3|opl3
+4	:	:	PUNCT	sent	_	3	punct	_	:|sent
+
+1	Риӄукэтэ	риӄукэт	NOUN	n	Case=Erg	2	nsubj	_	риӄукэт|n|sp|erg
+2	ивнин	ивик	VERB	v	Number[erg]=Sing|Person[erg]=3	0	root	_	ивик|v|tv|aor|asg3|osg3
+3	кэйӈын	кэйӈын	NOUN	n	Case=Abs|Number=Sing	2	obj	_	кэйӈын|n|sg|abs
+4	:	:	PUNCT	sent	_	2	punct	_	:|sent
 
