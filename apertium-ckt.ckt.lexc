@@ -52,6 +52,7 @@ Multichar_Symbols
 %<o_pl2%>                 ! 
 %<o_pl3%>                 !
 
+%<sing%>                  ! Singulative
 
 %<pers%>                  ! Personal
 %<dem%>                   ! Demonstrative
@@ -76,6 +77,9 @@ Multichar_Symbols
 
 %<ine%>                   ! Inessive
 %<subst%>                 ! Substantive
+
+%<stat%>
+%<hab%>
 
 %<percent%>               ! Percent
 %<sent%>                  ! Sentence marker
@@ -184,14 +188,15 @@ LEXICON V-NONFIN
 
 LEXICON V-IV-STAT-HAB
 
-%<s_sg3%>:%>ӄэн # ;
-%<s_pl3%>:%>ӄэнат # ;
-
+%<s_sg3%>:%>ӄин # ;
+%<s_pl3%>:%>ӄин%{E%}т # ;
+%<s_sg2%>:%>тури # ;
+%<s_pl2%>:%>игыт # ;
 
 LEXICON V-TV-STAT-HAB
 
-%<o_sg3%>:%>ӄэн # ;
-%<o_pl3%>:%>ӄэнат # ;
+%<a_sg3%>:%>ӄин # ;
+%<a_pl3%>:%>ӄин%{E%}т # ;
 
 LEXICON V-IV-NEUT-COMMON
 
@@ -266,7 +271,7 @@ LEXICON V-IV-AFFIX                            !! Verb affixes [intransitive]
 
 %[%+ӄэна%]%<impf%>:%>ӄэна # ; ! FIXME
 
-%[%+stat%]%<stat%>: V-IV-STAT-HAB ; 
+%[%+stat%]%<stat%>%<hab%>: V-IV-STAT-HAB ; 
 
 %<neut%>: V-IV-NEUT ; 
 %<prog%>: V-IV-PROG ; 
@@ -299,7 +304,7 @@ LEXICON V-TV-AFFIX                            !! Verb affixes [transitive]
 
 V-INV-AGENT-PL3 ;
 
-%[%+stat%]%<stat%>: V-TV-STAT-HAB ; 
+%[%+stat%]%<stat%>%<hab%>: V-TV-STAT-HAB ; 
 
 V-NONFIN ; 
 
@@ -529,7 +534,7 @@ LEXICON ADV                                  !! Adverb lexicon
 
 LEXICON Prefixes
 
-%[%+ны%]:ны%>             Verbs ;
+%[%+ны%]:н%{ы%}%>             Verbs ;
 %[%+ӄ%]:ӄ%{ы%}%>          Verbs ;      ! Intentional: Sg2,Pl2
 %[%+мын%]:мын%>           Verbs ;      ! Intentional: Pl1
 %[%+н%]:н%{ы%}%>          Verbs ;      ! Intentional: Sg3,Pl3

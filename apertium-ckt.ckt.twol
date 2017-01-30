@@ -73,13 +73,13 @@ Vx:ы <=> _ %{°%}: .#. ;
                                         _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] :* ; 
 
 "Vowel harmony for non-archiphonemic vowels (dominant)"
-Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* _ ; 
-                                        _ :* [ Dominant: | %{⁺ⱽᴴ%}: ] ; 
+Vx:Vy <=>   [ Dominant: | %{⁺ⱽᴴ%}: ] :* %>: :* _ ; 
+                                        _ :* %>: :* [ Dominant: | %{⁺ⱽᴴ%}: ] ; 
         except 
                                         _ [ %{·%}: | %{°%}: ]  ; 
         where 
-            Vx in ( у ) 
-            Vy in ( о ) matched ;
+            Vx in ( у и ) 
+            Vy in ( о э ) matched ;
 
 "Vowel harmony for non-archiphonemic vowels (э dominant)"
 Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ; 
@@ -109,18 +109,21 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
 "Allative suffix allomorphy II"
 %{ы%}:0 <=>   :Vow %>: %{J%}: _ ;
                    :Vow %>: _ :к ;        ! Locative
+                 .#. :н _ %>: :Vow ; ! prefix
 
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
                                 %>: :Coronal _ ; 
                                              _ :Cns (:0) %{·%}: ;
                                 %{J%}: :0 :п _ ;
-                                .#. :н _ %>: ;
+                                .#. :н _ %>: \:Vow ;
                                 .#. :Cns (:Glottal) _ %>: :Cns ; 
          except
                              :Vow %>: %{J%}: _ ;
                              :Vow %>: _ :к ;
 
+
+! н {ы} > и в > ӄ и н
 
 ! Vowel >   л г
 ! Cns   > ы л г
@@ -141,7 +144,10 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
 %{ъ%}:0 <=> _ %>: :Cns ; 
 
 "{т} alternation in -тва-" 
-%{т%}:0 <=> .#. _  ; 
+%{т%}:0 <=>     .#. _  ; 
+
+"{т} alternation in -тва-" 
+%{т%}:т <=>  %{ы%}: %>: _  ; 
 
 "{и} after coronals"
 %{и%}:0 <=> :Coronal %>: %{ы%}: т _ ; 
