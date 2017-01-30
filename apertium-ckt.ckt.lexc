@@ -450,6 +450,16 @@ LEXICON N-UUNX                               !! ??
 %<n%>: CASES-OBL ; 
 %<n%>%<pl%>%<abs%>:%>т K ; 
 %<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}ԓ%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%}н K ;
+%<n%>%<sing%>%<sg%>:%>%{ы%}ԓ%{ы%}%{N%}%{⁺ⱽᴴ%}%>%{ы%} CASES-OBL ; 
+
+LEXICON N-PIPIQ                               !! ??
+
+%<n%>: CASES-OBL ; 
+%<n%>%<pl%>%<abs%>:%>т K ; 
+%<n%>%<sing%>%<sg%>%<abs%>:%>%{ы%}ԓ%{ы%}%{N%}%>%{ы%}н K ;
+%<n%>%<sing%>%<sg%>:%>%{ы%}ԓ%{ы%}%{N%}%>%{ы%}н CASES-OBL ;
+
+
 
 LEXICON NP-ANT-F 
 
@@ -553,13 +563,11 @@ LEXICON Tense
 Verbs ; 
 
 
-
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON CC 
 
-%<cnjcoo%>: # ;
+%<cnjcoo%>: K ;
 
 LEXICON CA
 
@@ -567,11 +575,11 @@ LEXICON CA
 
 LEXICON POST 
 
-%<post%>: # ;
+%<post%>: K ;
 
 LEXICON INTERJ 
 
-%<ij%>: # ;
+%<ij%>: K ;
 
 LEXICON DIGITLEX
 
@@ -626,6 +634,7 @@ LEXICON Miscellaneous
 ымы:ымы ADV ; ! "и, тоже"
 нэмыӄэй:нэмыӄэй ADV ; ! "тоже"
 ытръэч:ытръэч ADV ; ! "только"
+ипэ:ипэ ADV ; ! "поистине"
 
 
 LEXICON Conjunctions 
@@ -674,6 +683,9 @@ LEXICON Nouns
 ӈинӄэй:ӈинӄэй N-Ia-AJMAK ; ! "мальчик"
 тумгытум:тумгытум N-Ia-AJMAK ; ! "товарищ"
 тэйӈэт:тэйӈэт N-Ia-AJMAK ; ! "пища"
+ыʼсӄэӄу:ыʼсӄэӄу N-Ia-AJMAK ; ! "яловая важенка"
+вэнӄор:вэнӄор N-Ia-AJMAK ; ! "ездовой олень"
+эԓгар:эԓгар N-Ia-AJMAK ; ! "песец"
 
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
@@ -701,6 +713,7 @@ LEXICON Nouns
 рэмкыԓьын:рэмкыԓьы N-III-RENMYN ; ! "гость"
 нутэсӄын:нутэсӄы N-III-RENMYN ; ! "земля"
 кэйӈын:кэйӈы N-III-RENMYN ; ! "медвед"
+ӈиныԓьыт:ӈиныԓьы N-III-RENMYN ; ! "молодой"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -718,7 +731,8 @@ LEXICON Nouns
 !аӈар:аӈар N-IV-TITI ; ! "звезда"
 
 уунъыт:уунъ N-UUNX ; ! "ягоды"
-риӄукэт:риӄукэ N-UUNX ; ! "песцы"
+риӄукэт:риӄукэ N-PIPIQ; ! "песцы"
+пипиӄыт:пипиӄы N-PIPIQ ; ! "мышь"
 
 
 LEXICON ProperNouns 

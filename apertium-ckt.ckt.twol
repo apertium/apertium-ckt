@@ -93,7 +93,9 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
 
 
 "Vowel coronal singulative allomorph with -г"
-%{N%}:г <=> [ :Vow | :Cns - :Coronal ] %>: %{ы%}: л (:0) _ ; 
+%{N%}:г <=> [ :Vow | :Cns - :Coronal ] %>: %{ы%}: ԓ (:0) _ ; 
+
+! п:п и:и п:п и:и ӄ:ӄ ы:ы >:0 {ы}:0 ԓ:ԓ {ы}:0 {N}:г {⁺ⱽᴴ}:0 >:0 {ы}:ы н:н
 
 ! у у н ъ > {ы} л {ы} {N} > {ы} н
 ! о о н ъ 0  ы  л  0   г  0  ы  н
@@ -106,11 +108,6 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
 "Allative suffix allomorphy"
 %{J%}:й <=> :Vow %>: _ %{ы%}: ;
 
-"Allative suffix allomorphy II"
-%{ы%}:0 <=>   :Vow %>: %{J%}: _ ;
-                   :Vow %>: _ :к ;        ! Locative
-                 .#. :н _ %>: :Vow ; ! prefix
-
 "Consonant final schwa epenthesis"
 %{ы%}:ы <=>     [ :Cns - :Coronal ] (:0) %>: _  ; 
                                 %>: :Coronal _ ; 
@@ -121,8 +118,8 @@ Vx:Vy <=>   [ %{⁺ⱽᴴ%}: ] :* _ ;
          except
                              :Vow %>: %{J%}: _ ;
                              :Vow %>: _ :к ;
-
-
+                             :Vow %>: _ ԓ %{ы%}: %{N%}: ;
+                       .#. :н _ %>: :Vow ; ! prefix
 ! н {ы} > и в > ӄ и н
 
 ! Vowel >   л г
