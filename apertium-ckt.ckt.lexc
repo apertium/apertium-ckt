@@ -15,6 +15,7 @@ Multichar_Symbols
 %<cnjcoo%>                ! Co-ordinating conjunction
 %<cnjadv%>                ! Adverbial conjunction
 %<v%>                     ! Verb
+%<cop%>
 
 %<iv%>                    ! Intransitive
 %<tv%>                    ! Transitive
@@ -181,10 +182,10 @@ LEXICON K                                   !! Word-final clitics
 
 LEXICON V-NONFIN 
 
-%<inf%>:%>н # ; 
+%<inf%>:%>%{ы%}н # ; 
 %<gna_sim%>:%>ма%{⁺ⱽᴴ%} # ; 
 %<gna_res%>:%>нэӈу # ; 
-%<gna_ant%>:%>к # ; 
+%<gna_ant%>:%>%{ы%}к # ; 
 
 LEXICON V-IV-STAT-HAB
 
@@ -319,10 +320,10 @@ LEXICON V-COP                                !! Copula verb
 LEXICON V-IV-DER 
 
 %<dur%>:%>ԓьэт V-IV-AFFIX ; 
-%<inch%>:%>ӈӈо V-IV-AFFIX ; 
+%<inch%>:%>ӈӈу V-IV-AFFIX ; 
 %<resu%>:%>тва V-IV-AFFIX ; 
-%<iter%>:%>тку V-IV-AFFIX ; 
-%<inch2%>:%>мго V-IV-AFFIX ; 
+%<iter%>:%>%{ы%}тку V-IV-AFFIX ; 
+%<inch2%>:%>мгу V-IV-AFFIX ; 
 
 V-IV-AFFIX ;
 
@@ -342,6 +343,11 @@ LEXICON V-TV                                !! Transitive verb stems
 LEXICON N-COMPOUND                          !! Cycle for nominal compounding
 
 %<cmp%>%+:%→ Nouns ;
+!# ; 
+
+LEXICON N-INCORP
+
+%<incorp%>%+:%→ Verbs ; 
 
 LEXICON N-DERIV-SPACIAL
 
@@ -351,10 +357,16 @@ LEXICON N-DERIV-SPACIAL
 %<sp%>%<all%>:%>%{e%}ты%{⁺ⱽᴴ%} K ;
 %<sp%>%<abl%>:%>%{J%}%{ы%}п%{ы%}%{⁺ⱽᴴ%} K ;
 
+LEXICON N-DERIV-DIM
+
+CASES-OBL ; 
+%<sg%>%<abs%>: K ;
+
 LEXICON N-DERIV
 
 %+чыку%<der%>%<subst%>:%>чыку N-DERIV-SPACIAL ; 
 %+ткын%<der%>%<subst%>:%>тк%{ы%}н%{⁺ⱽᴴ%} N-DERIV-SPACIAL ; 
+%<dim%>:%>ӄ%{E%}й N-DERIV-DIM ; 
 
 LEXICON CASES-OBL                            !! 
 
@@ -376,6 +388,7 @@ LEXICON N-Ia-AJMAK                           !! Class Ia: Bare stem
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
 %<n%>: N-COMPOUND ; 
+%<n%>%<sg%>%<abs%>: N-INCORP ;
 
 LEXICON N-Ib-ANGKY                           !! Class Ib: Bare stem, reduced final vowel
 
@@ -417,15 +430,25 @@ LEXICON N-IIb-TANNGYTAN                      !! Class IIb: Partial reduplication
 %<n%>: CASES-OBL ; 
 %<n%>: N-DERIV ; 
 %<n%>: N-COMPOUND ; 
-  
-LEXICON N-III-RENMYN                         !! Class III: Suffix -н
+   
+LEXICON N-III-NGEVEN                         !! Class III: Suffix -н
 
-%<n%>%<sg%>%<abs%>:н K ;
+%<n%>%<sg%>%<abs%>:%>н K ;
 %<n%>%<pl%>%<abs%>:%>т K ;
 %<n%>: CASES-OBL  ;
 %<n%>: CASES-ABL ; 
 %<n%>: N-DERIV ; 
 %<n%>: N-COMPOUND ; 
+
+LEXICON N-III-RENMYN                         !! Class III: Suffix -н
+
+%<n%>%<sg%>%<abs%>:%>%{ы%}н K ;
+%<n%>%<pl%>%<abs%>:%>%{ы%}т K ;
+%<n%>: CASES-OBL  ;
+%<n%>: CASES-ABL ; 
+%<n%>:%>%{ы%}  N-DERIV ; 
+%<n%>:%>%{ы%}  N-COMPOUND ; 
+%<n%>%<sg%>%<abs%>:%>%{ы%}н N-INCORP ; 
 
 LEXICON N-IV-QORA-ABS                        !! Class IV: Suffix -ӈы [irreg. stem]
 
@@ -542,11 +565,15 @@ LEXICON ADV                                  !! Adverb lexicon
 
 %<adv%>: K ;
 
+LEXICON ADV-ITG 
+
+%<adv%>%<itg%>: K ;
+
 LEXICON Prefixes
 
 %[%+ны%]:н%{ы%}%>             Verbs ;
 %[%+ӄ%]:ӄ%{ы%}%>          Verbs ;      ! Intentional: Sg2,Pl2
-%[%+мын%]:мын%>           Verbs ;      ! Intentional: Pl1
+%[%+мын%]:мын%>           Tense ;      ! Intentional: Pl1
 %[%+н%]:н%{ы%}%>          Verbs ;      ! Intentional: Sg3,Pl3
 %[%+нъ%]:н%{ъ%}%>         Verbs ;      ! Conditional: -
 %[%+м%]:м%{ы%}%>          Verbs ;      ! Intentional: Sg1
@@ -561,6 +588,7 @@ LEXICON Tense
 %[%+рэ%]:рэ%>   Verbs ;      ! Future
 !%[%+рэ%]:рэ%>   Nouns ;      ! Future
 Verbs ; 
+Nouns ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -645,6 +673,7 @@ LEXICON Conjunctions
 
 эвыр:эвыр CA ; 
 ӄэԓюӄ:ӄэԓюӄ CA ; 
+ыныкит:ыныкит CA ; ! "если"
 
 LEXICON Postpositions 
 
@@ -686,6 +715,8 @@ LEXICON Nouns
 ыʼсӄэӄу:ыʼсӄэӄу N-Ia-AJMAK ; ! "яловая важенка"
 вэнӄор:вэнӄор N-Ia-AJMAK ; ! "ездовой олень"
 эԓгар:эԓгар N-Ia-AJMAK ; ! "песец"
+пиӈпиӈ:пиӈпиӈ N-Ia-AJMAK ; ! "пепел, зола"
+увикук:увикук N-Ia-AJMAK ; ! "посуда для варки мяса"
 
 аӈӄы:аӈӄа N-Ib-ANGKY ; ! "море"
 умӄы:умӄэ N-Ib-ANGKY ; ! "белый медвед"
@@ -703,17 +734,22 @@ LEXICON Nouns
 танӈытан:танӈ N-IIb-TANNGYTAN ; ! "чужак"
 танӈытан:танӈытан N-IIb-TANNGYTAN-SG-ABS ; ! "чужак" 
 
-рэнмын:рэнм%{ы%} N-III-RENMYN ; ! "стена"
-ӈэвъэн:ӈэвъэ N-III-RENMYN ; ! "жена"
-ԓыгиннээн:ԓыгиннээ N-III-RENMYN ; ! "голец"
-рыпын:рыпы N-III-RENMYN ; ! "мездра"
+ӈэвъэн:ӈэвъэ N-III-NGEVEN ; ! "жена"
+ԓыгиннээн:ԓыгиннээ N-III-NGEVEN ; ! "голец"
+ӄытан:ӄыта N-III-NGEVEN ; ! "место"
+оʼравэтԓьан:оʼравэтԓьа N-III-NGEVEN ; ! "человек"
+
 эйгысӄын:эйгысӄ N-III-RENMYN ; ! "север"
-ӄытан:ӄыта N-III-RENMYN ; ! "место"
-йъилгын:йъилгы N-III-RENMYN ; ! "месяц"
-рэмкыԓьын:рэмкыԓьы N-III-RENMYN ; ! "гость"
-нутэсӄын:нутэсӄы N-III-RENMYN ; ! "земля"
-кэйӈын:кэйӈы N-III-RENMYN ; ! "медвед"
-ӈиныԓьыт:ӈиныԓьы N-III-RENMYN ; ! "молодой"
+рэнмын:рэнм N-III-RENMYN ; ! "стена"
+рыпын:рып N-III-RENMYN ; ! "мездра"
+йъилгын:йъилг N-III-RENMYN ; ! "месяц"
+рэмкыԓьын:рэмкыԓь N-III-RENMYN ; ! "гость"
+нутэсӄын:нутэсӄ N-III-RENMYN ; ! "земля"
+кэйӈын:кэйӈ N-III-RENMYN ; ! "медвед"
+ӈиныԓьыт:ӈиныԓь N-III-RENMYN ; ! "молодой"
+рэмкын:рэмк N-III-RENMYN ; ! "народ"
+гэкэӈыԓьын:гэкэӈыԓь N-III-RENMYN ; ! "ездок на оленях"
+тэкичгын:тэкичг N-III-RENMYN ; ! "мясо"
 
 яраӈы:яра N-IV-TITI ; ! "яранга, дом"
 ёроӈы:ёро N-IV-TITI ; ! "спальное помещение в яранге"
@@ -754,6 +790,8 @@ LEXICON AdjStems
 
 LEXICON Adverbs
 
+иаʼм:иаʼм ADV-ITG ; ! "почему"
+
 энмэн:энмэн ADV ; ! ""
 нэмэ:нэмэ ADV ; ! "опять"
 игыр:игыр ADV ; ! "сегодня"
@@ -762,6 +800,7 @@ LEXICON Adverbs
 эргатык:эргатык ADV ; ! "завтра"
 айвэ:айвэ ADV ; ! "вчера"
 ԓыгэн:ԓыгэн ADV ; ! "только"
+миӈкы:миӈкы ADV ; ! "где-нибудь"
 
 
 ынкы:ынкы ADV ; ! "1) там; 2) тогда"
@@ -1368,12 +1407,12 @@ LEXICON Adverbs
 
 LEXICON Verbs 
 
-ит:ит V-COP ;  
+итык:ит V-COP ;  
 тыԓя:тыԓя V-IV ; ! ""
 мгутыԓя:мгутыԓя V-IV ; ! "ехать караваном"
 пԓытку:пԓытку V-IV ; ! ""
 ет:ет V-IV ; ! "прибыть"
-чейвы:чейвы V-IV ; ! "ходить"
+чейвы:чейв V-IV ; ! "ходить"
 рук:рук V-TV ; ! "кушать"
 ёаʼт:ёаʼт V-IV ; ! ""
 ёоʼ:ёоʼ V-TV ; ! ""
@@ -1389,6 +1428,8 @@ LEXICON Verbs
 чимгъук:чимгъу V-TV ; ! "думать"
 эквэт:эквэт V-IV ; ! "уйти"
 камаграк:камагра V-IV ; ! "шевелиться"
+пиӈкук:пиӈку V-IV ; ! "" ! FIXME
+увик:уви V-IV ; ! "варить мяса"
 
 авэръэпык:авэръэпы V-IV ; ! "одеваться"
 арычгытвак:арычгытва V-IV ; ! "лежать на боку"
