@@ -7,8 +7,7 @@ VERSION=0.1.0
 LANG1=ckt
 BASENAME=apertium-$(LANG1)
 
-TARGETS_COMMON = $(LANG1).automorf.hfst $(LANG1).autogen.hfst \
-	$(LANG1).automorf.bin $(LANG1).autogen.bin $(LANG1).autopgen.bin \
+TARGETS_COMMON = $(LANG1).automorf.hfst $(LANG1).autogen.hfst $(LANG1).autoseg.hfst \
 	$(LANG1).automorf.att.gz $(LANG1).autogen.att.gz \
 		$(LANG1).rlx.bin
 
@@ -46,11 +45,29 @@ TARGETS_COMMON = $(LANG1).automorf.hfst $(LANG1).autogen.hfst \
 .deps/$(LANG1).LR.lexc-twoc.hfst: .deps/$(LANG1).LR.lexc.hfst .deps/$(LANG1).twoc.hfst
 	hfst-invert .deps/$(LANG1).LR.lexc.hfst | hfst-compose-intersect -1 - -2 .deps/$(LANG1).twoc.hfst | hfst-invert -o $@
 
-.deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL.lexc-twoc.hfst .deps/$(LANG1).twol.hfst
+.deps/$(LANG1).RL.seg.hfst: .deps/$(LANG1).RL.lexc-twoc.hfst .deps/$(LANG1).twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexc-twoc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
 
-.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.lexc-twoc.hfst .deps/$(LANG1).twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexc-twoc.hfst -2 .deps/$(LANG1).twol.hfst | hfst-minimise -o $@
+.deps/$(LANG1).LR.seg.hfst: .deps/$(LANG1).LR.lexc-twoc.hfst .deps/$(LANG1).twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexc-twoc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+
+.deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL.seg.hfst .deps/$(LANG1).mor.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).RL.seg.hfst -2 .deps/$(LANG1).mor.twol.hfst -o $@
+
+.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.seg.hfst .deps/$(LANG1).mor.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.seg.hfst -2 .deps/$(LANG1).mor.twol.hfst -o $@ 
+#	hfst-compose-intersect -1 .deps/$(LANG1).LR.seg.hfst -2 .deps/$(LANG1).mor.twol.hfst -o .deps/$(LANG1).LR.unweighted.hfst
+#	hfst-subtract -1 .deps/$(LANG1).LR.unweighted.hfst -2 .deps/$(LANG1).weights.noweight.hfst -o .deps/$(LANG1).LR.unweighted.subtr.hfst
+#	hfst-union -1 .deps/$(LANG1).LR.unweighted.subtr.hfst -2 .deps/$(LANG1).weights.hfst  -o $@
+
+.deps/$(LANG1).mor.twol.hfst: $(BASENAME).$(LANG1).mor.twol
+	hfst-twolc $< -o $@
+
+.deps/$(LANG1).seg.hfst: .deps/$(LANG1).LR.hfst .deps/$(LANG1).RL.seg.hfst .deps/spellrelax.hfst
+	hfst-invert .deps/$(LANG1).LR.hfst | hfst-compose-intersect -1 - -2 .deps/spellrelax.hfst | hfst-compose -F -1 - -2 .deps/$(LANG1).RL.seg.hfst -o $@
+
+$(LANG1).autoseg.hfst: .deps/$(LANG1).seg.hfst
+	hfst-minimise .deps/$(LANG1).seg.hfst | hfst-fst2fst -w -o $@
 
 $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 	hfst-fst2fst -O $< -o $@
@@ -63,17 +80,6 @@ $(LANG1).autogen.att.gz: $(LANG1).autogen.hfst
 
 $(LANG1).automorf.att.gz: $(LANG1).automorf.hfst
 	hfst-fst2txt $< | gzip -9 -c -n > $@
-
-$(LANG1).autogen.bin: $(LANG1).autogen.att.gz .deps/.d
-	zcat < $< > .deps/$(LANG1).autogen.att
-	lt-comp lr .deps/$(LANG1).autogen.att $@
-
-$(LANG1).automorf.bin: $(LANG1).automorf.att.gz .deps/.d
-	zcat < $< > .deps/$(LANG1).automorf.att
-	lt-comp lr .deps/$(LANG1).automorf.att $@
-
-$(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
-	lt-comp lr $< $@
 
 ###############################################################################
 ## Debugging transducers (for testvoc)
