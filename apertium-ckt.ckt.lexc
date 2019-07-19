@@ -147,12 +147,12 @@ Multichar_Symbols
 
 %<poss%>                  ! Possessor
 
-%<1sg%>                   ! 1sg possessed
-%<2sg%>                   ! 2sg possessed
-%<3sg%>                   ! 3sg possessed
-%<1pl%>                   ! 1pl possessed
-%<2pl%>                   ! 2pl possessed
-%<3pl%>                   ! 3pl possessed
+%<ps1sg%>                   ! 1sg possessed
+%<ps2sg%>                   ! 2sg possessed
+%<ps3sg%>                   ! 3sg possessed
+%<ps1pl%>                   ! 1pl possessed
+%<ps2pl%>                   ! 2pl possessed
+%<ps3pl%>                   ! 3pl possessed
 
 %<top%>                   ! Spatial derivations
 %<side%>
@@ -293,7 +293,7 @@ LEXICON ADV
 LEXICON ADJ
 ! @U.itsa.verb@%<v%>%<iv%>:@U.itsa.verb@ V-IV ;
 : ADJ-FIN ;
-%<adj%>%<3sg%>: # ;
+%<adj%>%<ps3sg%>: # ;
 
 
 LEXICON ADJ-FIN
@@ -301,10 +301,10 @@ LEXICON ADJ-FIN
 @R.ADJ.n@%<adj%>:@R.ADJ.n@ PERS-NUM-CLITICS ;
 %<adj%>: PERS-NUM-CLITICS ;
 @R.ADJ.n@%<adj%>%<dim%>%<3%>:@R.ADJ.n@%>ӄин%{æ%}ӄ%{æ%}й # ;
-@R.ADJ.n@%<adj%>%<aug%>%<3sg%>:@R.ADJ.n@%>ӄэначгын # ;
-@R.ADJ.n@%<adj%>%<aug%>%<3sg%>:@R.ADJ.n@%>ӄэнайӈын # ;
-@R.ADJ.n@%<adj%>%<aug%>%<3pl%>:@R.ADJ.n@%>ӄэначгыт # ;
-@R.ADJ.n@%<adj%>%<aug%>%<3pl%>:@R.ADJ.n@%>ӄэнайӈыт # ;
+@R.ADJ.n@%<adj%>%<aug%>%<ps3sg%>:@R.ADJ.n@%>ӄэначгын # ;
+@R.ADJ.n@%<adj%>%<aug%>%<ps3sg%>:@R.ADJ.n@%>ӄэнайӈын # ;
+@R.ADJ.n@%<adj%>%<aug%>%<ps3pl%>:@R.ADJ.n@%>ӄэначгыт # ;
+@R.ADJ.n@%<adj%>%<aug%>%<ps3pl%>:@R.ADJ.n@%>ӄэнайӈыт # ;
 @R.ADJ.n@%<adj%>%<ints%>[%+ints%]:@R.ADJ.n@%> PERS-NUM-CLITICS ;
 @R.ADJ.n@%<adj%>%<ints2%>[%+ints2%]:@R.ADJ.n@%> PERS-NUM-CLITICS ;
 @R.ADJ.n@%<adj%>%<approx%>[%+approx%]:@R.ADJ.n@%> PERS-NUM-CLITICS ;
@@ -1190,12 +1190,12 @@ LEXICON NEG
 
 
 LEXICON NEG-CLITICS
-%<1sg%>:%>ин%{æ%}гым N-DERIV-I ;
-%<2sg%>:%>ин%{æ%}гыт N-DERIV-I ;
-%<3sg%>:%>ин%{æ%} N-DERIV-Ic ;
-%<1pl%>:%>ин%{æ%}мури N-DERIV-I ;
-%<2pl%>:%>ин%{æ%}тури N-DERIV-I ;
-%<3pl%>:%>ин%{æ%}т N-DERIV-I ;
+%<ps1sg%>:%>ин%{æ%}гым N-DERIV-I ;
+%<ps2sg%>:%>ин%{æ%}гыт N-DERIV-I ;
+%<ps3sg%>:%>ин%{æ%} N-DERIV-Ic ;
+%<ps1pl%>:%>ин%{æ%}мури N-DERIV-I ;
+%<ps2pl%>:%>ин%{æ%}тури N-DERIV-I ;
+%<ps3pl%>:%>ин%{æ%}т N-DERIV-I ;
 
 LEXICON Adjectives
 
@@ -4816,18 +4816,18 @@ LEXICON N-DERIV-SUFF-T
 
 LEXICON POSS
 ! different possessed, mark on the possessor
-%<poss%>%<1sg%>:%>ин%{æ%}гым N-DERIV-I ;
-%<poss%>%<2sg%>:%>ин%{æ%}гыт N-DERIV-I ;
-%<poss%>%<3sg%>:%>ин%{æ%} N-DERIV-Ic ;
-%<poss%>%<1pl%>:%>ин%{æ%}мури N-DERIV-I ;
-%<poss%>%<2pl%>:%>ин%{æ%}тури N-DERIV-I ;
-%<poss%>%<3pl%>:%>ин%{æ%}т%{и%} N-DERIV-I ;
-%<pl%>%<poss%>%<1sg%>:%>%{ы%}ргин%{æ%}гым N-DERIV-I ;
-%<pl%>%<poss%>%<2sg%>:%>%{ы%}ргин%{æ%}гыт N-DERIV-I ;
-%<pl%>%<poss%>%<3sg%>:%>%{ы%}ргин N-DERIV-I ;
-%<pl%>%<poss%>%<1pl%>:%>%{ы%}ргин%{æ%}мури N-DERIV-I ;
-%<pl%>%<poss%>%<2pl%>:%>%{ы%}ргин%{æ%}тури N-DERIV-I ;
-%<pl%>%<poss%>%<3pl%>:%>%{ы%}ргин%{æ%}т%{и%} N-DERIV-I ;
+%<poss%>%<ps1sg%>:%>ин%{æ%}гым N-DERIV-I ;
+%<poss%>%<ps2sg%>:%>ин%{æ%}гыт N-DERIV-I ;
+%<poss%>%<ps3sg%>:%>ин%{æ%} N-DERIV-Ic ;
+%<poss%>%<ps1pl%>:%>ин%{æ%}мури N-DERIV-I ;
+%<poss%>%<ps2pl%>:%>ин%{æ%}тури N-DERIV-I ;
+%<poss%>%<ps3pl%>:%>ин%{æ%}т%{и%} N-DERIV-I ;
+%<pl%>%<poss%>%<ps1sg%>:%>%{ы%}ргин%{æ%}гым N-DERIV-I ;
+%<pl%>%<poss%>%<ps2sg%>:%>%{ы%}ргин%{æ%}гыт N-DERIV-I ;
+%<pl%>%<poss%>%<ps3sg%>:%>%{ы%}ргин N-DERIV-I ;
+%<pl%>%<poss%>%<ps1pl%>:%>%{ы%}ргин%{æ%}мури N-DERIV-I ;
+%<pl%>%<poss%>%<ps2pl%>:%>%{ы%}ргин%{æ%}тури N-DERIV-I ;
+%<pl%>%<poss%>%<ps3pl%>:%>%{ы%}ргин%{æ%}т%{и%} N-DERIV-I ;
 
 ! different possessors, mark on the possessed
 %<px1sg%>%<abs%>:%>%{ы%}гым K ;
@@ -4841,14 +4841,14 @@ LEXICON REL
 %<rel%>:%>%{ы%}кин N-DERIV-I ;
 
 LEXICON PERS-NUM-CLITICS
-%<1sg%>:%>%{I%}гым K ;
-%<2sg%>:%>%{I%}гыт K ;
-%<3sg%>:%>%{ы%}ӄин K ;
-%<3sg%>:%>%{ы%}кин K ;
-%<1pl%>:%>%{ы%}мури K ;
-%<2pl%>:%>%{ы%}тури K ;
-%<3pl%>:%>%{ы%}ӄин%{æ%}т K ;
-%<3pl%>:%>%{ы%}кин%{æ%}т K ;
+%<ps1sg%>:%>%{I%}гым K ;
+%<ps2sg%>:%>%{I%}гыт K ;
+%<ps3sg%>:%>%{ы%}ӄин K ;
+%<ps3sg%>:%>%{ы%}кин K ;
+%<ps1pl%>:%>%{ы%}мури K ;
+%<ps2pl%>:%>%{ы%}тури K ;
+%<ps3pl%>:%>%{ы%}ӄин%{æ%}т K ;
+%<ps3pl%>:%>%{ы%}кин%{æ%}т K ;
 
 
 !!! FIXME
@@ -4964,10 +4964,10 @@ LEXICON PRON-PERS-CASES
 
 
 LEXICON PRON-REL
-%<rel%>%<1sg%>:нин%{æ%}кин N-DERIV-I ;
-%<rel%>%<1pl%>:гин%{æ%}кин N-DERIV-I ;
-%<rel%>%<2sg%>:ин%{æ%}кин N-DERIV-I ;
-%<rel%>%<2pl%>:гин%{æ%}кин N-DERIV-I ;
+%<rel%>%<ps1sg%>:нин%{æ%}кин N-DERIV-I ;
+%<rel%>%<ps1pl%>:гин%{æ%}кин N-DERIV-I ;
+%<rel%>%<ps2sg%>:ин%{æ%}кин N-DERIV-I ;
+%<rel%>%<ps2pl%>:гин%{æ%}кин N-DERIV-I ;
 
 
 
